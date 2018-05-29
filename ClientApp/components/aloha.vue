@@ -8,7 +8,7 @@
                         <label>Количество станций: </label>
                     </td>
                     <td>
-                        <select v-model="numberOfStations">
+                        <select v-model="inputParameters.numberOfStations">
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="15">15</option>
@@ -23,7 +23,7 @@
                         <label>Входной поток: </label>
                     </td>
                     <td>
-                        <select v-model="inputFlow">
+                        <select v-model="inputParameters.inputFlow">
                             <option value="0.1">0.1</option>
                             <option value="0.2">0.2</option>
                             <option value="0.3">0.3</option>
@@ -42,7 +42,7 @@
                         <label>Количество фреймов: </label>
                     </td>
                     <td>
-                        <select v-model="numberOfFrames">
+                        <select v-model="inputParameters.numberOfFrames">
                             <option value="100">100</option>
                             <option value="500">500</option>
                             <option value="1000">1000</option>
@@ -57,7 +57,7 @@
                         <label>Количество итераций: </label>
                     </td>
                     <td>
-                        <select v-model="numberOfIterations">
+                        <select v-model="inputParameters.numberOfIterations">
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="15">15</option>
@@ -75,10 +75,10 @@
                         <label>Сгенерировано пакетов: </label>
                     </th>
                     <th>
-                        <input type="text" v-model="generatedPackagesAdapted">
+                        <input type="text" v-model="outputResults.adapted.generatedPackages">
                     </th>
                     <th>
-                        <input type="text" v-model="generatedPackagesNotAdapted">
+                        <input type="text" v-model="outputResults.notAdapted.generatedPackages">
                     </th>
                 </tr>
                 <tr>
@@ -86,10 +86,10 @@
                         <label>Обработано пакетов: </label>
                     </th>
                     <th>
-                        <input type="text" v-model="packagesLeavedSystemAdapted">
+                        <input type="text" v-model="outputResults.adapted.packagesLeavedSystem">
                     </th>
                     <th>
-                        <input type="text" v-model="packagesLeavedSystemNotAdapted">
+                        <input type="text" v-model="outputResults.notAdapted.packagesLeavedSystem">
                     </th>
                 </tr>
                 <tr>
@@ -97,10 +97,10 @@
                         <label>Осталось в очереди: </label>
                     </th>
                     <th>
-                        <input type="text" v-model="backloggedPackagesAdapted">
+                        <input type="text" v-model="outputResults.adapted.backloggedPackages">
                     </th>
                     <th>
-                        <input type="text" v-model="backloggedPackagesNotAdapted">
+                        <input type="text" v-model="outputResults.notAdapted.backloggedPackages">
                     </th>
                 </tr>
                 <tr>
@@ -108,10 +108,10 @@
                         <label>Число коллизий: </label>
                     </th>
                     <th>
-                        <input type="text" v-model="collisionsAdapted">
+                        <input type="text" v-model="outputResults.adapted.collisions">
                     </th>
                     <th>
-                        <input type="text" v-model="collisionsNotAdapted">
+                        <input type="text" v-model="outputResults.notAdapted.collisions">
                     </th>
                 </tr>
                 <tr>
@@ -119,10 +119,10 @@
                         <label>Среднее число заявок в очереди: </label>
                     </th>
                     <th>
-                        <input type="text" v-model="averageOfBackloggedPackagesAdapted">
+                        <input type="text" v-model="outputResults.adapted.averageOfBackloggedPackages">
                     </th>
                     <th>
-                        <input type="text" v-model="averageOfBackloggedPackagesNotAdapted">
+                        <input type="text" v-model="outputResults.notAdapted.averageOfBackloggedPackages">
                     </th>
                 </tr>
                 <tr>
@@ -130,10 +130,10 @@
                         <label>Среднее время заявки в системе: </label>
                     </th>
                     <th>
-                        <input type="text" v-model="averageOfPackagesLifeTimeAdapted">
+                        <input type="text" v-model="outputResults.adapted.averageOfPackagesLifeTime">
                     </th>
                     <th>
-                        <input type="text" v-model="averageOfPackagesLifeTimeNotAdapted">
+                        <input type="text" v-model="outputResults.notAdapted.averageOfPackagesLifeTime">
                     </th>
                 </tr>
             </tbody>
@@ -153,27 +153,33 @@
             LineChart
         },
         data: () => ({
-            numberOfStations: null,
-            inputFlow: null,
-            numberOfFrames: null,
-            numberOfIterations: null,
-
-            generatedPackagesAdapted: null,
-            packagesLeavedSystemAdapted: null,
-            backloggedPackagesAdapted: null,
-            collisionsAdapted: null,
-            averageOfBackloggedPackagesAdapted: null,
-            averageOfPackagesLifeTimeAdapted: null,
-
-            generatedPackagesNotAdapted: null,
-            packagesLeavedSystemNotAdapted: null,
-            backloggedPackagesNotAdapted: null,
-            collisionsNotAdapted: null,
-            averageOfBackloggedPackagesNotAdapted: null,
-            averageOfPackagesLifeTimeNotAdapted: null,
-
+            inputParameters: {
+                numberOfStations: null,
+                inputFlow: null,
+                numberOfFrames: null,
+                numberOfIterations: null
+            },
+            outputResults: {
+                adapted: {
+                    generatedPackages: null,
+                    packagesLeavedSystem: null,
+                    backloggedPackages: null,
+                    collisions: null,
+                    averageOfBackloggedPackages: null,
+                    averageOfPackagesLifeTime: null,
+                },
+                notAdapted: {
+                    generatedPackages: null,
+                    packagesLeavedSystem: null,
+                    backloggedPackages: null,
+                    collisions: null,
+                    averageOfBackloggedPackages: null,
+                    averageOfPackagesLifeTime: null,
+                }
+            },
             datacollection: null,
-            dataFromServer: null
+            dataFromServer: null,
+            dataForChart: null
         }),
         mounted: function () {
 
@@ -184,45 +190,46 @@
                     method: 'post',
                     url: '/api/Aloha/Calculation',
                     data: {
-                        NumberOfStations: this.numberOfStations,
-                        InputFlow: this.inputFlow,
-                        NumberOfFrames: this.numberOfFrames,
-                        numberOfIterations: this.numberOfIterations
+                        NumberOfStations: this.inputParameters.numberOfStations,
+                        InputFlow: this.inputParameters.inputFlow,
+                        NumberOfFrames: this.inputParameters.numberOfFrames,
+                        numberOfIterations: this.inputParameters.numberOfIterations
                     }
                 }).then(response => {
                     console.log(response.data);
                     this.dataFromServer = response.data;
                     //this.findAverageInArray(this.dataFromServer.adapted.packagesGenerated);
                     this.updateResults(this.dataFromServer);
+                    this.fillData();
                 });
             },
             updateResults(data) {
-                this.generatedPackagesAdapted = this.findAverageInArray(data.adapted.packagesGenerated);
-                this.packagesLeavedSystemAdapted = this.findAverageInArray(data.adapted.packagesLeavedSystem);
-                this.backloggedPackagesAdapted = this.findAverageInArray(data.adapted.backloggedPackages);
-                this.collisionsAdapted = this.findAverageInArray(data.adapted.collisions);
-                this.averageOfBackloggedPackagesAdapted = this.findAverageInArray(data.adapted.averageOfBackloggedPackages);
-                this.averageOfPackagesLifeTimeAdapted = this.findAverageInArray(data.adapted.averageOfPackagesLifeTime);
+                this.outputResults.adapted.generatedPackages = this.findAverageInArray(data.adapted.packagesGenerated);
+                this.outputResults.adapted.packagesLeavedSystem = this.findAverageInArray(data.adapted.packagesLeavedSystem);
+                this.outputResults.adapted.backloggedPackages = this.findAverageInArray(data.adapted.backloggedPackages);
+                this.outputResults.adapted.collisions = this.findAverageInArray(data.adapted.collisions);
+                this.outputResults.adapted.averageOfBackloggedPackages = this.findAverageInArray(data.adapted.averageOfBackloggedPackages);
+                this.outputResults.adapted.averageOfPackagesLifeTime = this.findAverageInArray(data.adapted.averageOfPackagesLifeTime);
 
-                this.generatedPackagesNotAdapted = this.findAverageInArray(data.notAdapted.packagesGenerated);
-                this.packagesLeavedSystemNotAdapted = this.findAverageInArray(data.notAdapted.packagesLeavedSystem);
-                this.backloggedPackagesNotAdapted = this.findAverageInArray(data.notAdapted.backloggedPackages);
-                this.collisionsNotAdapted = this.findAverageInArray(data.notAdapted.collisions);
-                this.averageOfBackloggedPackagesNotAdapted = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages);
-                this.averageOfPackagesLifeTimeNotAdapted = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime);
+                this.outputResults.notAdapted.generatedPackages = this.findAverageInArray(data.notAdapted.packagesGenerated);
+                this.outputResults.notAdapted.packagesLeavedSystem = this.findAverageInArray(data.notAdapted.packagesLeavedSystem);
+                this.outputResults.notAdapted.backloggedPackages = this.findAverageInArray(data.notAdapted.backloggedPackages);
+                this.outputResults.notAdapted.collisions = this.findAverageInArray(data.notAdapted.collisions);
+                this.outputResults.notAdapted.averageOfBackloggedPackages = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages);
+                this.outputResults.notAdapted.averageOfPackagesLifeTime = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime);
             },
             fillData() {
                 this.datacollection = {
-                    labels: [this.getRandomInt(), this.getRandomInt()],
+                    labels: [1,2,3,4,5],
                     datasets: [
                         {
                             label: 'Data One',
                             backgroundColor: '#009a09',
-                            data: [this.getRandomInt(), this.getRandomInt()]
+                            data: this.dataFromServer.adapted.averageOfBackloggedPackages
                         }, {
                             label: 'Data One',
                             backgroundColor: '#f87979',
-                            data: [this.getRandomInt(), this.getRandomInt()]
+                            data: this.dataFromServer.notAdapted.averageOfBackloggedPackages
                         }
                     ]
                 }
@@ -231,12 +238,12 @@
                 return Math.floor(Math.random() * (50 - 5 + 1)) + 5
             },
             findAverageInArray(arr) {
-                console.log("FIND AVERAGE");
-                console.log(arr);
+                //console.log("FIND AVERAGE");
+                //console.log(arr);
                 let count = arr.length;
                 arr = arr.reduce((previous, current) => current += previous);
                 arr /= count;
-                console.log(arr);
+                //console.log(arr);
                 return arr;
             }
 

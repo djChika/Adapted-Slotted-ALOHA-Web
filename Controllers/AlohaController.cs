@@ -56,11 +56,14 @@ namespace AdaptedSlottedAlohaWeb.Controllers
         {
             var adapted = new Stats(inputParameters.NumberOfIterations);
             var notadapted = new Stats(inputParameters.NumberOfIterations);
+
             for (var i = 0; i < inputParameters.NumberOfIterations; i++)
             {
-                var adaptedAloha = new Aloha.Engine(inputParameters.NumberOfStations,
+                var adaptedAloha = new Aloha.Engine(
+                    inputParameters.NumberOfStations,
                     inputParameters.InputFlow,
                     inputParameters.NumberOfFrames, true);
+
                 adapted.PackagesGenerated[i] = adaptedAloha._statistics.PackagesGenerated;
                 adapted.PackagesLeavedSystem[i] = adaptedAloha._statistics.PackagesLeavedSystem;
                 adapted.Collisions[i] = adaptedAloha._statistics.Collisions;
@@ -69,9 +72,11 @@ namespace AdaptedSlottedAlohaWeb.Controllers
                 adapted.AverageOfPackagesLifeTime[i] = adaptedAloha._statistics.AverageOfPackagesLifeTime;
 
 
-                var notAdaptedAloha = new Aloha.Engine(inputParameters.NumberOfStations,
+                var notAdaptedAloha = new Aloha.Engine(
+                    inputParameters.NumberOfStations,
                     inputParameters.InputFlow,
                     inputParameters.NumberOfFrames, false);
+
                 notadapted.PackagesGenerated[i] = notAdaptedAloha._statistics.PackagesGenerated;
                 notadapted.PackagesLeavedSystem[i] = notAdaptedAloha._statistics.PackagesLeavedSystem;
                 notadapted.Collisions[i] = notAdaptedAloha._statistics.Collisions;

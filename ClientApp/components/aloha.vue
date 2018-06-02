@@ -1,147 +1,109 @@
 <template>
-    <div id="aloha">
-        <br />
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>Количество станций: </label>
-                    </td>
-                    <td>
-                        <select v-model="inputParameters.numberOfStations">
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
+    <div class="m-auto" id="aloha">
+        <div class="row justify-content-center">
+            <div class="card m-3 input-card">
+                <h6 class="card-header text-center">
+                    Входные данные
+                </h6>
+                <div class="card-body">
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-input" for="inputGroupSelect01">Количество станций </label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" v-model="inputParameters.numberOfStations">
+                            <option v-for="value in inputValues.numberOfStations" :value="value">{{value}}</option>
                         </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Входной поток: </label>
-                    </td>
-                    <td>
-                        <select v-model="inputParameters.inputFlow">
-                            <option value="0.1">0.1</option>
-                            <option value="0.2">0.2</option>
-                            <option value="0.3">0.3</option>
-                            <option value="0.4">0.4</option>
-                            <option value="0.5">0.5</option>
-                            <option value="0.6">0.6</option>
-                            <option value="0.7">0.7</option>
-                            <option value="0.8">0.8</option>
-                            <option value="0.9">0.9</option>
-                            <option value="1.0">1.0</option>
+                    </div>
+
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-input" for="inputGroupSelect01">Интенсив. вх. потока </label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" v-model="inputParameters.inputFlow">
+                            <option v-for="value in inputValues.inputFlow" :value="value">{{value}}</option>
                         </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Количество фреймов: </label>
-                    </td>
-                    <td>
-                        <select v-model="inputParameters.numberOfFrames">
-                            <option value="100">100</option>
-                            <option value="500">500</option>
-                            <option value="1000">1000</option>
-                            <option value="5000">5000</option>
-                            <option value="10000">10000</option>
-                            <option value="50000">50000</option>
+                    </div>
+
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-input" for="inputGroupSelect01">Количество фреймов </label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" v-model="inputParameters.numberOfFrames">
+                            <option v-for="value in inputValues.numberOfFrames" :value="value">{{value}}</option>
                         </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Количество итераций: </label>
-                    </td>
-                    <td>
-                        <select v-model="inputParameters.numberOfIterations">
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
+                    </div>
+
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-input" for="inputGroupSelect01">Количество итераций </label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" v-model="inputParameters.numberOfIterations">
+                            <option v-for="value in inputValues.numberOfIterations" :value="value">{{value}}</option>
                         </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <input type="button" v-on:click="calculate" value="calculate" />
-        <table>
-            <tbody>
-                <tr>
-                    <th>
-                        <label>Сгенерировано пакетов: </label>
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.adapted.generatedPackages">
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.notAdapted.generatedPackages">
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <label>Обработано пакетов: </label>
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.adapted.packagesLeavedSystem">
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.notAdapted.packagesLeavedSystem">
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <label>Осталось в очереди: </label>
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.adapted.backloggedPackages">
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.notAdapted.backloggedPackages">
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <label>Число коллизий: </label>
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.adapted.collisions">
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.notAdapted.collisions">
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <label>Среднее число заявок в очереди: </label>
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.adapted.averageOfBackloggedPackages">
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.notAdapted.averageOfBackloggedPackages">
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <label>Среднее время заявки в системе: </label>
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.adapted.averageOfPackagesLifeTime">
-                    </th>
-                    <th>
-                        <input type="text" v-model="outputResults.notAdapted.averageOfPackagesLifeTime">
-                    </th>
-                </tr>
-            </tbody>
-        </table>
-        <div class="small">
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <button class="btn btn-outline-primary my-3" style="width:100px" v-on:click="calculate">Анализ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-3 result-card">
+                <h6 class="card-header text-center">
+                    Результаты
+                </h6>
+                <div class="card-body">
+                    <div class="input-group input-group-sm my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-result" style="width:180px">Отправлено пакетов </label>
+                        </div>
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.adapted.generatedPackages">
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.notAdapted.generatedPackages">
+                    </div>
+                    <div class="input-group input-group-sm my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-result" style="width:180px">Обработано пакетов </label>
+                        </div>
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.adapted.packagesLeavedSystem">
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.notAdapted.packagesLeavedSystem">
+                    </div>
+                    <div class="input-group input-group-sm my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-result">Осталось в очереди </label>
+                        </div>
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.adapted.backloggedPackages">
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.notAdapted.backloggedPackages">
+                    </div>
+
+                    <div class="input-group input-group-sm my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-result">Число коллизий </label>
+                        </div>
+                        <input type="text" class="form-control text-center input-result adapted" v-model="outputResults.adapted.collisions">
+                        <input type="text" class="form-control text-center input-result notadapted" v-model="outputResults.notAdapted.collisions">
+                    </div>
+
+                    <div class="input-group input-group-sm my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-result">Ср. число заявок в очереди </label>
+                        </div>
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.adapted.averageOfBackloggedPackages">
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.notAdapted.averageOfBackloggedPackages">
+                    </div>
+                    <div class="input-group input-group-sm my-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text label-result">Ср. время заявки в системе </label>
+                        </div>
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.adapted.averageOfPackagesLifeTime">
+                        <input type="text" class="form-control text-center input-result" v-model="outputResults.notAdapted.averageOfPackagesLifeTime">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="small m-3" hidden="true">
             <line-chart :chart-data="datacollection"></line-chart>
             <button @click="fillData()">Randomize</button>
         </div>
+
     </div>
 </template>
 <script>
@@ -153,6 +115,46 @@
             LineChart
         },
         data: () => ({
+            inputValues: {
+                numberOfStations: {
+                    1: 5,
+                    2: 10,
+                    3: 15,
+                    4: 20,
+                    5: 50,
+                    6: 100
+                },
+                inputFlow: {
+                    1: 0.1,
+                    2: 0.2,
+                    3: 0.3,
+                    4: 0.4,
+                    5: 0.5,
+                    6: 0.6,
+                    7: 0.7,
+                    8: 0.8,
+                    9: 0.9,
+                    10: 1.0
+                },
+                numberOfFrames: {
+                    1: 100,
+                    2: 500,
+                    3: 1000,
+                    4: 5000,
+                    5: 10000,
+                    6: 50000,
+                    7: 100000
+                },
+                numberOfIterations: {
+                    1: 1,
+                    2: 5,
+                    3: 10,
+                    4: 15,
+                    5: 20,
+                    6: 50,
+                    7: 100
+                }
+            },
             inputParameters: {
                 numberOfStations: null,
                 inputFlow: null,
@@ -178,7 +180,6 @@
                 }
             },
             datacollection: null,
-            dataFromServer: null,
             dataForChart: null
         }),
         mounted: function () {
@@ -197,39 +198,38 @@
                     }
                 }).then(response => {
                     console.log(response.data);
-                    this.dataFromServer = response.data;
                     //this.findAverageInArray(this.dataFromServer.adapted.packagesGenerated);
-                    this.updateResults(this.dataFromServer);
-                    this.fillData();
+                    this.updateResults(response.data);
+                    this.fillData(response.data);
                 });
             },
             updateResults(data) {
-                this.outputResults.adapted.generatedPackages = this.findAverageInArray(data.adapted.packagesGenerated);
-                this.outputResults.adapted.packagesLeavedSystem = this.findAverageInArray(data.adapted.packagesLeavedSystem);
-                this.outputResults.adapted.backloggedPackages = this.findAverageInArray(data.adapted.backloggedPackages);
-                this.outputResults.adapted.collisions = this.findAverageInArray(data.adapted.collisions);
-                this.outputResults.adapted.averageOfBackloggedPackages = this.findAverageInArray(data.adapted.averageOfBackloggedPackages);
-                this.outputResults.adapted.averageOfPackagesLifeTime = this.findAverageInArray(data.adapted.averageOfPackagesLifeTime);
+                this.outputResults.adapted.generatedPackages = this.findAverageInArray(data.adapted.packagesGenerated).toFixed(0);
+                this.outputResults.adapted.packagesLeavedSystem = this.findAverageInArray(data.adapted.packagesLeavedSystem).toFixed(0);
+                this.outputResults.adapted.backloggedPackages = this.findAverageInArray(data.adapted.backloggedPackages).toFixed(0);
+                this.outputResults.adapted.collisions = this.findAverageInArray(data.adapted.collisions).toFixed(0);
+                this.outputResults.adapted.averageOfBackloggedPackages = this.findAverageInArray(data.adapted.averageOfBackloggedPackages).toFixed(0);
+                this.outputResults.adapted.averageOfPackagesLifeTime = this.findAverageInArray(data.adapted.averageOfPackagesLifeTime).toFixed(2);
 
-                this.outputResults.notAdapted.generatedPackages = this.findAverageInArray(data.notAdapted.packagesGenerated);
-                this.outputResults.notAdapted.packagesLeavedSystem = this.findAverageInArray(data.notAdapted.packagesLeavedSystem);
-                this.outputResults.notAdapted.backloggedPackages = this.findAverageInArray(data.notAdapted.backloggedPackages);
-                this.outputResults.notAdapted.collisions = this.findAverageInArray(data.notAdapted.collisions);
-                this.outputResults.notAdapted.averageOfBackloggedPackages = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages);
-                this.outputResults.notAdapted.averageOfPackagesLifeTime = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime);
+                this.outputResults.notAdapted.generatedPackages = this.findAverageInArray(data.notAdapted.packagesGenerated).toFixed(0);
+                this.outputResults.notAdapted.packagesLeavedSystem = this.findAverageInArray(data.notAdapted.packagesLeavedSystem).toFixed(0);
+                this.outputResults.notAdapted.backloggedPackages = this.findAverageInArray(data.notAdapted.backloggedPackages).toFixed(0);
+                this.outputResults.notAdapted.collisions = this.findAverageInArray(data.notAdapted.collisions).toFixed(0);
+                this.outputResults.notAdapted.averageOfBackloggedPackages = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages).toFixed(0);
+                this.outputResults.notAdapted.averageOfPackagesLifeTime = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime).toFixed(2);
             },
-            fillData() {
+            fillData(data) {
                 this.datacollection = {
-                    labels: [1,2,3,4,5],
+                    labels: [1, 2, 3, 4, 5],
                     datasets: [
                         {
                             label: 'Data One',
                             backgroundColor: '#009a09',
-                            data: this.dataFromServer.adapted.averageOfBackloggedPackages
+                            data: data.adapted.averageOfBackloggedPackages
                         }, {
                             label: 'Data One',
                             backgroundColor: '#f87979',
-                            data: this.dataFromServer.notAdapted.averageOfBackloggedPackages
+                            data: data.notAdapted.averageOfBackloggedPackages
                         }
                     ]
                 }
@@ -254,5 +254,34 @@
     .small {
         max-width: 600px;
         margin: 150px auto;
+    }
+
+    .adapted {
+        background: rgba(92,184,92,0.4);
+    }
+
+    .notadapted {
+        background: rgba(217,83,79,0.4);
+    }
+
+    .input-card {
+        //max-width: 350px;
+    }
+
+    .label-input {
+        width: 179px;
+    }
+
+    .result-card {
+       //max-width: 450px;
+    }
+
+    .input-result {
+        max-width:75px;
+    }
+
+    .label-result{
+        min-width:195px;
+        max-width:195px;
     }
 </style>

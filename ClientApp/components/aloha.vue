@@ -98,21 +98,26 @@
                     </div>
                 </div>
             </div>
+            <div class="card small h-auto justify-content-center m-3 chart-card">
+                <h6 class="card-header text-center">
+                    Коллизии
+                </h6>
+                <div class="card-body">
+                    <bar-chart :chart-data="chartsData.collisionsData"></bar-chart>
+                </div>
+            </div>
         </div>
-        <div class="small m-3" hidden="true">
-            <line-chart :chart-data="datacollection"></line-chart>
-            <button @click="fillData()">Randomize</button>
-        </div>
-
     </div>
 </template>
 <script>
     import axios from 'axios'
     import $ from 'jquery'
     import LineChart from '../store/LineChart.js'
+    import BarChart from '../store/BarChart.js'
     export default {
         components: {
-            LineChart
+            LineChart,
+            BarChart
         },
         data: () => ({
             inputValues: {
@@ -151,8 +156,6 @@
                     3: 10,
                     4: 15,
                     5: 20,
-                    6: 50,
-                    7: 100
                 }
             },
             inputParameters: {
@@ -179,8 +182,10 @@
                     averageOfPackagesLifeTime: null,
                 }
             },
-            datacollection: null,
-            dataForChart: null
+            chartsData: {
+                collisionsData: null,
+                //lifeTimeData: null
+            }
         }),
         mounted: function () {
 
@@ -200,7 +205,7 @@
                     console.log(response.data);
                     //this.findAverageInArray(this.dataFromServer.adapted.packagesGenerated);
                     this.updateResults(response.data);
-                    this.fillData(response.data);
+                    this.fillChart(response.data);
                 });
             },
             updateResults(data) {
@@ -218,21 +223,21 @@
                 this.outputResults.notAdapted.averageOfBackloggedPackages = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages).toFixed(0);
                 this.outputResults.notAdapted.averageOfPackagesLifeTime = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime).toFixed(2);
             },
-            fillData(data) {
-                this.datacollection = {
-                    labels: [1, 2, 3, 4, 5],
+            fillChart(data) {
+                this.chartsData.collisionsData = {
+                    //labels: Array.from(Array(data.notAdapted.collisions.length).keys()),
                     datasets: [
                         {
-                            label: 'Data One',
+                            label: 'Адаптивный алгоритм',
                             backgroundColor: '#009a09',
-                            data: data.adapted.averageOfBackloggedPackages
+                            data: [Math.round(this.findAverageInArray(data.adapted.collisions))]
                         }, {
-                            label: 'Data One',
+                            label: 'Неадаптивный алгоритм',
                             backgroundColor: '#f87979',
-                            data: data.notAdapted.averageOfBackloggedPackages
+                            data: [Math.round(this.findAverageInArray(data.notAdapted.collisions))]
                         }
                     ]
-                }
+                };
             },
             getRandomInt() {
                 return Math.floor(Math.random() * (50 - 5 + 1)) + 5
@@ -273,15 +278,15 @@
     }
 
     .result-card {
-       //max-width: 450px;
+        //max-width: 450px;
     }
 
     .input-result {
-        max-width:75px;
+        max-width: 75px;
     }
 
-    .label-result{
-        min-width:195px;
-        max-width:195px;
+    .label-result {
+        min-width: 195px;
+        max-width: 195px;
     }
 </style>

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a7afc3092652ab11d94b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7776770876712de3dfab"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -706,7 +706,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(379)(__webpack_require__.s = 379);
+/******/ 	return hotCreateRequire(380)(__webpack_require__.s = 380);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2548,7 +2548,7 @@
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(353)("./" + name);
+                __webpack_require__(355)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -5220,7 +5220,7 @@
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(211)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(212)(module)))
 
 /***/ }),
 /* 1 */
@@ -5230,9 +5230,9 @@
 
 
 module.exports = __webpack_require__(31);
-module.exports.easing = __webpack_require__(258);
-module.exports.canvas = __webpack_require__(257);
-module.exports.options = __webpack_require__(259);
+module.exports.easing = __webpack_require__(260);
+module.exports.canvas = __webpack_require__(259);
+module.exports.options = __webpack_require__(261);
 
 
 /***/ }),
@@ -5490,10 +5490,10 @@ module.exports = function (it) {
 
 
 module.exports = {};
-module.exports.Arc = __webpack_require__(253);
-module.exports.Line = __webpack_require__(254);
-module.exports.Point = __webpack_require__(255);
-module.exports.Rectangle = __webpack_require__(256);
+module.exports.Arc = __webpack_require__(255);
+module.exports.Line = __webpack_require__(256);
+module.exports.Point = __webpack_require__(257);
+module.exports.Rectangle = __webpack_require__(258);
 
 
 /***/ }),
@@ -5522,7 +5522,7 @@ var ctx = __webpack_require__(18);
 var IObject = __webpack_require__(35);
 var toObject = __webpack_require__(13);
 var toLength = __webpack_require__(8);
-var asc = __webpack_require__(309);
+var asc = __webpack_require__(311);
 module.exports = function (TYPE, $create) {
   var IS_MAP = TYPE == 1;
   var IS_FILTER = TYPE == 2;
@@ -16528,7 +16528,7 @@ return Vue;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(376), __webpack_require__(378).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(377), __webpack_require__(379).setImmediate))
 
 /***/ }),
 /* 15 */
@@ -17403,8 +17403,8 @@ module.exports = {};
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(10);
-var IE8_DOM_DEFINE = __webpack_require__(311);
-var toPrimitive = __webpack_require__(325);
+var IE8_DOM_DEFINE = __webpack_require__(313);
+var toPrimitive = __webpack_require__(327);
 var dP = Object.defineProperty;
 
 exports.f = __webpack_require__(26) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
@@ -18110,7 +18110,7 @@ exports = module.exports = __webpack_require__(38)();
 
 
 // module
-exports.push([module.i, "\n.small {\n    max-width: 600px;\n    margin: 150px auto;\n}\n.adapted {\n    background: rgba(92,184,92,0.4);\n}\n.notadapted {\n    background: rgba(217,83,79,0.4);\n}\n.input-card {\n    //max-width: 350px;\n}\n.label-input {\n    width: 179px;\n}\n.result-card {\n   //max-width: 450px;\n}\n.input-result {\n    max-width:75px;\n}\n.label-result{\n    min-width:195px;\n    max-width:195px;\n}\n", "", {"version":3,"sources":["C:/Users/Chika/Documents/RiderProjects/Adapted-Slotted-ALOHA-Web/ClientApp/components/aloha.vue?2946066c"],"names":[],"mappings":";AA6PA;IACA,iBAAA;IACA,mBAAA;CACA;AAEA;IACA,gCAAA;CACA;AAEA;IACA,gCAAA;CACA;AAEA;IACA,mBAAA;CACA;AAEA;IACA,aAAA;CACA;AAEA;GACA,mBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,gBAAA;IACA,gBAAA;CACA","file":"aloha.vue","sourcesContent":["<template>\r\n    <div class=\"m-auto\" id=\"aloha\">\r\n        <div class=\"row justify-content-center\">\r\n            <div class=\"card m-3 input-card\">\r\n                <h6 class=\"card-header text-center\">\r\n                    Входные данные\r\n                </h6>\r\n                <div class=\"card-body\">\r\n                    <div class=\"input-group my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-input\" for=\"inputGroupSelect01\">Количество станций </label>\r\n                        </div>\r\n                        <select class=\"custom-select\" id=\"inputGroupSelect01\" v-model=\"inputParameters.numberOfStations\">\r\n                            <option v-for=\"value in inputValues.numberOfStations\" :value=\"value\">{{value}}</option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <div class=\"input-group my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-input\" for=\"inputGroupSelect01\">Интенсив. вх. потока </label>\r\n                        </div>\r\n                        <select class=\"custom-select\" id=\"inputGroupSelect01\" v-model=\"inputParameters.inputFlow\">\r\n                            <option v-for=\"value in inputValues.inputFlow\" :value=\"value\">{{value}}</option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <div class=\"input-group my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-input\" for=\"inputGroupSelect01\">Количество фреймов </label>\r\n                        </div>\r\n                        <select class=\"custom-select\" id=\"inputGroupSelect01\" v-model=\"inputParameters.numberOfFrames\">\r\n                            <option v-for=\"value in inputValues.numberOfFrames\" :value=\"value\">{{value}}</option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <div class=\"input-group my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-input\" for=\"inputGroupSelect01\">Количество итераций </label>\r\n                        </div>\r\n                        <select class=\"custom-select\" id=\"inputGroupSelect01\" v-model=\"inputParameters.numberOfIterations\">\r\n                            <option v-for=\"value in inputValues.numberOfIterations\" :value=\"value\">{{value}}</option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <div class=\"row justify-content-center\">\r\n                        <button class=\"btn btn-outline-primary my-3\" style=\"width:100px\" v-on:click=\"calculate\">Анализ</button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"card m-3 result-card\">\r\n                <h6 class=\"card-header text-center\">\r\n                    Результаты\r\n                </h6>\r\n                <div class=\"card-body\">\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\" style=\"width:180px\">Отправлено пакетов </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.generatedPackages\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.generatedPackages\">\r\n                    </div>\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\" style=\"width:180px\">Обработано пакетов </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.packagesLeavedSystem\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.packagesLeavedSystem\">\r\n                    </div>\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\">Осталось в очереди </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.backloggedPackages\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.backloggedPackages\">\r\n                    </div>\r\n\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\">Число коллизий </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result adapted\" v-model=\"outputResults.adapted.collisions\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result notadapted\" v-model=\"outputResults.notAdapted.collisions\">\r\n                    </div>\r\n\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\">Ср. число заявок в очереди </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.averageOfBackloggedPackages\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.averageOfBackloggedPackages\">\r\n                    </div>\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\">Ср. время заявки в системе </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.averageOfPackagesLifeTime\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.averageOfPackagesLifeTime\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"small m-3\" hidden=\"true\">\r\n            <line-chart :chart-data=\"datacollection\"></line-chart>\r\n            <button @click=\"fillData()\">Randomize</button>\r\n        </div>\r\n\r\n    </div>\r\n</template>\r\n<script>\r\n    import axios from 'axios'\r\n    import $ from 'jquery'\r\n    import LineChart from '../store/LineChart.js'\r\n    export default {\r\n        components: {\r\n            LineChart\r\n        },\r\n        data: () => ({\r\n            inputValues: {\r\n                numberOfStations: {\r\n                    1: 5,\r\n                    2: 10,\r\n                    3: 15,\r\n                    4: 20,\r\n                    5: 50,\r\n                    6: 100\r\n                },\r\n                inputFlow: {\r\n                    1: 0.1,\r\n                    2: 0.2,\r\n                    3: 0.3,\r\n                    4: 0.4,\r\n                    5: 0.5,\r\n                    6: 0.6,\r\n                    7: 0.7,\r\n                    8: 0.8,\r\n                    9: 0.9,\r\n                    10: 1.0\r\n                },\r\n                numberOfFrames: {\r\n                    1: 100,\r\n                    2: 500,\r\n                    3: 1000,\r\n                    4: 5000,\r\n                    5: 10000,\r\n                    6: 50000,\r\n                    7: 100000\r\n                },\r\n                numberOfIterations: {\r\n                    1: 1,\r\n                    2: 5,\r\n                    3: 10,\r\n                    4: 15,\r\n                    5: 20,\r\n                    6: 50,\r\n                    7: 100\r\n                }\r\n            },\r\n            inputParameters: {\r\n                numberOfStations: null,\r\n                inputFlow: null,\r\n                numberOfFrames: null,\r\n                numberOfIterations: null\r\n            },\r\n            outputResults: {\r\n                adapted: {\r\n                    generatedPackages: null,\r\n                    packagesLeavedSystem: null,\r\n                    backloggedPackages: null,\r\n                    collisions: null,\r\n                    averageOfBackloggedPackages: null,\r\n                    averageOfPackagesLifeTime: null,\r\n                },\r\n                notAdapted: {\r\n                    generatedPackages: null,\r\n                    packagesLeavedSystem: null,\r\n                    backloggedPackages: null,\r\n                    collisions: null,\r\n                    averageOfBackloggedPackages: null,\r\n                    averageOfPackagesLifeTime: null,\r\n                }\r\n            },\r\n            datacollection: null,\r\n            dataForChart: null\r\n        }),\r\n        mounted: function () {\r\n\r\n        },\r\n        methods: {\r\n            calculate: function () {\r\n                axios({\r\n                    method: 'post',\r\n                    url: '/api/Aloha/Calculation',\r\n                    data: {\r\n                        NumberOfStations: this.inputParameters.numberOfStations,\r\n                        InputFlow: this.inputParameters.inputFlow,\r\n                        NumberOfFrames: this.inputParameters.numberOfFrames,\r\n                        numberOfIterations: this.inputParameters.numberOfIterations\r\n                    }\r\n                }).then(response => {\r\n                    console.log(response.data);\r\n                    //this.findAverageInArray(this.dataFromServer.adapted.packagesGenerated);\r\n                    this.updateResults(response.data);\r\n                    this.fillData(response.data);\r\n                });\r\n            },\r\n            updateResults(data) {\r\n                this.outputResults.adapted.generatedPackages = this.findAverageInArray(data.adapted.packagesGenerated).toFixed(0);\r\n                this.outputResults.adapted.packagesLeavedSystem = this.findAverageInArray(data.adapted.packagesLeavedSystem).toFixed(0);\r\n                this.outputResults.adapted.backloggedPackages = this.findAverageInArray(data.adapted.backloggedPackages).toFixed(0);\r\n                this.outputResults.adapted.collisions = this.findAverageInArray(data.adapted.collisions).toFixed(0);\r\n                this.outputResults.adapted.averageOfBackloggedPackages = this.findAverageInArray(data.adapted.averageOfBackloggedPackages).toFixed(0);\r\n                this.outputResults.adapted.averageOfPackagesLifeTime = this.findAverageInArray(data.adapted.averageOfPackagesLifeTime).toFixed(2);\r\n\r\n                this.outputResults.notAdapted.generatedPackages = this.findAverageInArray(data.notAdapted.packagesGenerated).toFixed(0);\r\n                this.outputResults.notAdapted.packagesLeavedSystem = this.findAverageInArray(data.notAdapted.packagesLeavedSystem).toFixed(0);\r\n                this.outputResults.notAdapted.backloggedPackages = this.findAverageInArray(data.notAdapted.backloggedPackages).toFixed(0);\r\n                this.outputResults.notAdapted.collisions = this.findAverageInArray(data.notAdapted.collisions).toFixed(0);\r\n                this.outputResults.notAdapted.averageOfBackloggedPackages = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages).toFixed(0);\r\n                this.outputResults.notAdapted.averageOfPackagesLifeTime = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime).toFixed(2);\r\n            },\r\n            fillData(data) {\r\n                this.datacollection = {\r\n                    labels: [1, 2, 3, 4, 5],\r\n                    datasets: [\r\n                        {\r\n                            label: 'Data One',\r\n                            backgroundColor: '#009a09',\r\n                            data: data.adapted.averageOfBackloggedPackages\r\n                        }, {\r\n                            label: 'Data One',\r\n                            backgroundColor: '#f87979',\r\n                            data: data.notAdapted.averageOfBackloggedPackages\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            getRandomInt() {\r\n                return Math.floor(Math.random() * (50 - 5 + 1)) + 5\r\n            },\r\n            findAverageInArray(arr) {\r\n                //console.log(\"FIND AVERAGE\");\r\n                //console.log(arr);\r\n                let count = arr.length;\r\n                arr = arr.reduce((previous, current) => current += previous);\r\n                arr /= count;\r\n                //console.log(arr);\r\n                return arr;\r\n            }\r\n\r\n        },\r\n    }\r\n</script>\r\n<style>\r\n    .small {\r\n        max-width: 600px;\r\n        margin: 150px auto;\r\n    }\r\n\r\n    .adapted {\r\n        background: rgba(92,184,92,0.4);\r\n    }\r\n\r\n    .notadapted {\r\n        background: rgba(217,83,79,0.4);\r\n    }\r\n\r\n    .input-card {\r\n        //max-width: 350px;\r\n    }\r\n\r\n    .label-input {\r\n        width: 179px;\r\n    }\r\n\r\n    .result-card {\r\n       //max-width: 450px;\r\n    }\r\n\r\n    .input-result {\r\n        max-width:75px;\r\n    }\n\n    .label-result{\n        min-width:195px;\n        max-width:195px;\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.small {\n    max-width: 600px;\n    margin: 150px auto;\n}\n.adapted {\n    background: rgba(92,184,92,0.4);\n}\n.notadapted {\n    background: rgba(217,83,79,0.4);\n}\n.input-card {\n    //max-width: 350px;\n}\n.label-input {\n    width: 179px;\n}\n.result-card {\n    //max-width: 450px;\n}\n.input-result {\n    max-width: 75px;\n}\n.label-result {\n    min-width: 195px;\n    max-width: 195px;\n}\n", "", {"version":3,"sources":["C:/Users/Chika/Documents/RiderProjects/Adapted-Slotted-ALOHA-Web/ClientApp/components/aloha.vue?6663cad0"],"names":[],"mappings":";AAkQA;IACA,iBAAA;IACA,mBAAA;CACA;AAEA;IACA,gCAAA;CACA;AAEA;IACA,gCAAA;CACA;AAEA;IACA,mBAAA;CACA;AAEA;IACA,aAAA;CACA;AAEA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,iBAAA;IACA,iBAAA;CACA","file":"aloha.vue","sourcesContent":["<template>\r\n    <div class=\"m-auto\" id=\"aloha\">\r\n        <div class=\"row justify-content-center\">\r\n            <div class=\"card m-3 input-card\">\r\n                <h6 class=\"card-header text-center\">\r\n                    Входные данные\r\n                </h6>\r\n                <div class=\"card-body\">\r\n                    <div class=\"input-group my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-input\" for=\"inputGroupSelect01\">Количество станций </label>\r\n                        </div>\r\n                        <select class=\"custom-select\" id=\"inputGroupSelect01\" v-model=\"inputParameters.numberOfStations\">\r\n                            <option v-for=\"value in inputValues.numberOfStations\" :value=\"value\">{{value}}</option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <div class=\"input-group my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-input\" for=\"inputGroupSelect01\">Интенсив. вх. потока </label>\r\n                        </div>\r\n                        <select class=\"custom-select\" id=\"inputGroupSelect01\" v-model=\"inputParameters.inputFlow\">\r\n                            <option v-for=\"value in inputValues.inputFlow\" :value=\"value\">{{value}}</option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <div class=\"input-group my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-input\" for=\"inputGroupSelect01\">Количество фреймов </label>\r\n                        </div>\r\n                        <select class=\"custom-select\" id=\"inputGroupSelect01\" v-model=\"inputParameters.numberOfFrames\">\r\n                            <option v-for=\"value in inputValues.numberOfFrames\" :value=\"value\">{{value}}</option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <div class=\"input-group my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-input\" for=\"inputGroupSelect01\">Количество итераций </label>\r\n                        </div>\r\n                        <select class=\"custom-select\" id=\"inputGroupSelect01\" v-model=\"inputParameters.numberOfIterations\">\r\n                            <option v-for=\"value in inputValues.numberOfIterations\" :value=\"value\">{{value}}</option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <div class=\"row justify-content-center\">\r\n                        <button class=\"btn btn-outline-primary my-3\" style=\"width:100px\" v-on:click=\"calculate\">Анализ</button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"card m-3 result-card\">\r\n                <h6 class=\"card-header text-center\">\r\n                    Результаты\r\n                </h6>\r\n                <div class=\"card-body\">\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\" style=\"width:180px\">Отправлено пакетов </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.generatedPackages\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.generatedPackages\">\r\n                    </div>\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\" style=\"width:180px\">Обработано пакетов </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.packagesLeavedSystem\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.packagesLeavedSystem\">\r\n                    </div>\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\">Осталось в очереди </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.backloggedPackages\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.backloggedPackages\">\r\n                    </div>\r\n\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\">Число коллизий </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result adapted\" v-model=\"outputResults.adapted.collisions\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result notadapted\" v-model=\"outputResults.notAdapted.collisions\">\r\n                    </div>\r\n\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\">Ср. число заявок в очереди </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.averageOfBackloggedPackages\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.averageOfBackloggedPackages\">\r\n                    </div>\r\n                    <div class=\"input-group input-group-sm my-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <label class=\"input-group-text label-result\">Ср. время заявки в системе </label>\r\n                        </div>\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.adapted.averageOfPackagesLifeTime\">\r\n                        <input type=\"text\" class=\"form-control text-center input-result\" v-model=\"outputResults.notAdapted.averageOfPackagesLifeTime\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"card small h-auto justify-content-center m-3 chart-card\">\r\n                <h6 class=\"card-header text-center\">\r\n                    Коллизии\r\n                </h6>\r\n                <div class=\"card-body\">\r\n                    <bar-chart :chart-data=\"chartsData.collisionsData\"></bar-chart>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>\r\n<script>\r\n    import axios from 'axios'\r\n    import $ from 'jquery'\r\n    import LineChart from '../store/LineChart.js'\r\n    import BarChart from '../store/BarChart.js'\r\n    export default {\r\n        components: {\r\n            LineChart,\r\n            BarChart\r\n        },\r\n        data: () => ({\r\n            inputValues: {\r\n                numberOfStations: {\r\n                    1: 5,\r\n                    2: 10,\r\n                    3: 15,\r\n                    4: 20,\r\n                    5: 50,\r\n                    6: 100\r\n                },\r\n                inputFlow: {\r\n                    1: 0.1,\r\n                    2: 0.2,\r\n                    3: 0.3,\r\n                    4: 0.4,\r\n                    5: 0.5,\r\n                    6: 0.6,\r\n                    7: 0.7,\r\n                    8: 0.8,\r\n                    9: 0.9,\r\n                    10: 1.0\r\n                },\r\n                numberOfFrames: {\r\n                    1: 100,\r\n                    2: 500,\r\n                    3: 1000,\r\n                    4: 5000,\r\n                    5: 10000,\r\n                    6: 50000,\r\n                    7: 100000\r\n                },\r\n                numberOfIterations: {\r\n                    1: 1,\r\n                    2: 5,\r\n                    3: 10,\r\n                    4: 15,\r\n                    5: 20,\r\n                }\r\n            },\r\n            inputParameters: {\r\n                numberOfStations: null,\r\n                inputFlow: null,\r\n                numberOfFrames: null,\r\n                numberOfIterations: null\r\n            },\r\n            outputResults: {\r\n                adapted: {\r\n                    generatedPackages: null,\r\n                    packagesLeavedSystem: null,\r\n                    backloggedPackages: null,\r\n                    collisions: null,\r\n                    averageOfBackloggedPackages: null,\r\n                    averageOfPackagesLifeTime: null,\r\n                },\r\n                notAdapted: {\r\n                    generatedPackages: null,\r\n                    packagesLeavedSystem: null,\r\n                    backloggedPackages: null,\r\n                    collisions: null,\r\n                    averageOfBackloggedPackages: null,\r\n                    averageOfPackagesLifeTime: null,\r\n                }\r\n            },\r\n            chartsData: {\r\n                collisionsData: null,\r\n                //lifeTimeData: null\r\n            }\r\n        }),\r\n        mounted: function () {\r\n\r\n        },\r\n        methods: {\r\n            calculate: function () {\r\n                axios({\r\n                    method: 'post',\r\n                    url: '/api/Aloha/Calculation',\r\n                    data: {\r\n                        NumberOfStations: this.inputParameters.numberOfStations,\r\n                        InputFlow: this.inputParameters.inputFlow,\r\n                        NumberOfFrames: this.inputParameters.numberOfFrames,\r\n                        numberOfIterations: this.inputParameters.numberOfIterations\r\n                    }\r\n                }).then(response => {\r\n                    console.log(response.data);\r\n                    //this.findAverageInArray(this.dataFromServer.adapted.packagesGenerated);\r\n                    this.updateResults(response.data);\r\n                    this.fillChart(response.data);\r\n                });\r\n            },\r\n            updateResults(data) {\r\n                this.outputResults.adapted.generatedPackages = this.findAverageInArray(data.adapted.packagesGenerated).toFixed(0);\r\n                this.outputResults.adapted.packagesLeavedSystem = this.findAverageInArray(data.adapted.packagesLeavedSystem).toFixed(0);\r\n                this.outputResults.adapted.backloggedPackages = this.findAverageInArray(data.adapted.backloggedPackages).toFixed(0);\r\n                this.outputResults.adapted.collisions = this.findAverageInArray(data.adapted.collisions).toFixed(0);\r\n                this.outputResults.adapted.averageOfBackloggedPackages = this.findAverageInArray(data.adapted.averageOfBackloggedPackages).toFixed(0);\r\n                this.outputResults.adapted.averageOfPackagesLifeTime = this.findAverageInArray(data.adapted.averageOfPackagesLifeTime).toFixed(2);\r\n\r\n                this.outputResults.notAdapted.generatedPackages = this.findAverageInArray(data.notAdapted.packagesGenerated).toFixed(0);\r\n                this.outputResults.notAdapted.packagesLeavedSystem = this.findAverageInArray(data.notAdapted.packagesLeavedSystem).toFixed(0);\r\n                this.outputResults.notAdapted.backloggedPackages = this.findAverageInArray(data.notAdapted.backloggedPackages).toFixed(0);\r\n                this.outputResults.notAdapted.collisions = this.findAverageInArray(data.notAdapted.collisions).toFixed(0);\r\n                this.outputResults.notAdapted.averageOfBackloggedPackages = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages).toFixed(0);\r\n                this.outputResults.notAdapted.averageOfPackagesLifeTime = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime).toFixed(2);\r\n            },\r\n            fillChart(data) {\r\n                this.chartsData.collisionsData = {\r\n                    //labels: Array.from(Array(data.notAdapted.collisions.length).keys()),\r\n                    datasets: [\r\n                        {\r\n                            label: 'Адаптивный алгоритм',\r\n                            backgroundColor: '#009a09',\r\n                            data: [Math.round(this.findAverageInArray(data.adapted.collisions))]\r\n                        }, {\r\n                            label: 'Неадаптивный алгоритм',\r\n                            backgroundColor: '#f87979',\r\n                            data: [Math.round(this.findAverageInArray(data.notAdapted.collisions))]\r\n                        }\r\n                    ]\r\n                };\r\n            },\r\n            getRandomInt() {\r\n                return Math.floor(Math.random() * (50 - 5 + 1)) + 5\r\n            },\r\n            findAverageInArray(arr) {\r\n                //console.log(\"FIND AVERAGE\");\r\n                //console.log(arr);\r\n                let count = arr.length;\r\n                arr = arr.reduce((previous, current) => current += previous);\r\n                arr /= count;\r\n                //console.log(arr);\r\n                return arr;\r\n            }\r\n\r\n        },\r\n    }\r\n</script>\r\n<style>\r\n    .small {\r\n        max-width: 600px;\r\n        margin: 150px auto;\r\n    }\r\n\r\n    .adapted {\r\n        background: rgba(92,184,92,0.4);\r\n    }\r\n\r\n    .notadapted {\r\n        background: rgba(217,83,79,0.4);\r\n    }\r\n\r\n    .input-card {\r\n        //max-width: 350px;\r\n    }\r\n\r\n    .label-input {\r\n        width: 179px;\r\n    }\r\n\r\n    .result-card {\r\n        //max-width: 450px;\r\n    }\r\n\r\n    .input-result {\r\n        max-width: 75px;\r\n    }\r\n\r\n    .label-result {\r\n        min-width: 195px;\r\n        max-width: 195px;\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -18216,7 +18216,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(370)
+var listToStyles = __webpack_require__(371)
 
 /*
 type StyleObject = {
@@ -19151,8 +19151,8 @@ module.exports = {
 
 
 var helpers = __webpack_require__(1);
-var basic = __webpack_require__(260);
-var dom = __webpack_require__(261);
+var basic = __webpack_require__(262);
+var dom = __webpack_require__(263);
 
 // @TODO Make possible to select another platform at build time.
 var implementation = dom._enabled ? dom : basic;
@@ -19229,8 +19229,8 @@ module.exports = helpers.extend({
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var convert = __webpack_require__(274);
-var string = __webpack_require__(272);
+var convert = __webpack_require__(276);
+var string = __webpack_require__(274);
 
 var Color = function (obj) {
 	if (obj instanceof Color) {
@@ -19732,8 +19732,8 @@ module.exports = function (it) {
 
 var global = __webpack_require__(40);
 var core = __webpack_require__(32);
-var ctx = __webpack_require__(284);
-var hide = __webpack_require__(287);
+var ctx = __webpack_require__(286);
+var hide = __webpack_require__(289);
 var has = __webpack_require__(63);
 var PROTOTYPE = 'prototype';
 
@@ -19809,7 +19809,7 @@ module.exports = function (it, key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(283);
+var cof = __webpack_require__(285);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -19820,9 +19820,9 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(281);
-var IE8_DOM_DEFINE = __webpack_require__(288);
-var toPrimitive = __webpack_require__(301);
+var anObject = __webpack_require__(283);
+var IE8_DOM_DEFINE = __webpack_require__(290);
+var toPrimitive = __webpack_require__(303);
 var dP = Object.defineProperty;
 
 exports.f = __webpack_require__(33) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
@@ -20004,9 +20004,9 @@ var $export = __webpack_require__(3);
 var redefine = __webpack_require__(29);
 var hide = __webpack_require__(20);
 var Iterators = __webpack_require__(27);
-var $iterCreate = __webpack_require__(313);
+var $iterCreate = __webpack_require__(315);
 var setToStringTag = __webpack_require__(48);
-var getPrototypeOf = __webpack_require__(318);
+var getPrototypeOf = __webpack_require__(320);
 var ITERATOR = __webpack_require__(4)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
@@ -20127,7 +20127,7 @@ module.exports.f = function (C) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(319);
+var $keys = __webpack_require__(321);
 var enumBugKeys = __webpack_require__(71);
 
 module.exports = Object.keys || function keys(O) {
@@ -20178,7 +20178,7 @@ var store = global[SHARED] || (global[SHARED] = {});
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(18);
-var invoke = __webpack_require__(312);
+var invoke = __webpack_require__(314);
 var html = __webpack_require__(45);
 var cel = __webpack_require__(44);
 var global = __webpack_require__(5);
@@ -20284,7 +20284,7 @@ module.exports = __webpack_require__(12).getIteratorMethod = function (it) {
 "use strict";
 
 var addToUnscopables = __webpack_require__(25);
-var step = __webpack_require__(314);
+var step = __webpack_require__(316);
 var Iterators = __webpack_require__(27);
 var toIObject = __webpack_require__(30);
 
@@ -20324,7 +20324,7 @@ addToUnscopables('entries');
 
 "use strict";
 
-var $at = __webpack_require__(324)(true);
+var $at = __webpack_require__(326)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
 __webpack_require__(75)(String, 'String', function (iterated) {
@@ -32385,17 +32385,55 @@ module.exports = Html5Entities;
 
 /***/ }),
 /* 209 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VueCharts", function() { return VueCharts; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_index_js__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BaseCharts__ = __webpack_require__(362);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Bar", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HorizontalBar", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Doughnut", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["c"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Line", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["d"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Pie", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["e"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "PolarArea", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["f"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Radar", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["g"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Bubble", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["h"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Scatter", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["i"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "mixins", function() { return __WEBPACK_IMPORTED_MODULE_0__mixins_index_js__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "generateChart", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["j"]; });
+
+
+var VueCharts = {
+  Bar: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["a" /* Bar */],
+  HorizontalBar: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["b" /* HorizontalBar */],
+  Doughnut: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["c" /* Doughnut */],
+  Line: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["d" /* Line */],
+  Pie: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["e" /* Pie */],
+  PolarArea: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["f" /* PolarArea */],
+  Radar: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["g" /* Radar */],
+  Bubble: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["h" /* Bubble */],
+  Scatter: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["i" /* Scatter */],
+  mixins: __WEBPACK_IMPORTED_MODULE_0__mixins_index_js__["a" /* default */],
+  generateChart: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["j" /* generateChart */]
+};
+/* harmony default export */ __webpack_exports__["default"] = (VueCharts);
+
+
+/***/ }),
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(367)
+__webpack_require__(368)
 
 var Component = __webpack_require__(55)(
   /* script */
-  __webpack_require__(223),
+  __webpack_require__(225),
   /* template */
-  __webpack_require__(364),
+  __webpack_require__(365),
   /* scopeId */
   null,
   /* cssModules */
@@ -32422,18 +32460,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(368)
+__webpack_require__(369)
 
 var Component = __webpack_require__(55)(
   /* script */
-  __webpack_require__(225),
+  __webpack_require__(227),
   /* template */
-  __webpack_require__(365),
+  __webpack_require__(366),
   /* scopeId */
   null,
   /* cssModules */
@@ -32460,7 +32498,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -32488,30 +32526,30 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(15))(10);
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(359);
+__webpack_require__(361);
 
-__webpack_require__(277);
+__webpack_require__(279);
 
-__webpack_require__(276);
+__webpack_require__(278);
 
-var _app = __webpack_require__(218);
+var _app = __webpack_require__(219);
 
 _app.app.$mount('#app');
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__resourceQuery, module) {/*eslint-env browser*/
@@ -32531,7 +32569,7 @@ var options = {
   ansiColors: {}
 };
 if (true) {
-  var querystring = __webpack_require__(356);
+  var querystring = __webpack_require__(358);
   var overrides = querystring.parse(__resourceQuery.slice(1));
   setOverrides(overrides);
 }
@@ -32672,11 +32710,11 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
-  var strip = __webpack_require__(357);
+  var strip = __webpack_require__(359);
 
   var overlay;
   if (typeof document !== 'undefined' && options.overlay) {
-    overlay = __webpack_require__(372)({
+    overlay = __webpack_require__(373)({
       ansiColors: options.ansiColors,
       overlayStyles: options.overlayStyles
     });
@@ -32739,7 +32777,7 @@ function createReporter() {
   };
 }
 
-var processUpdate = __webpack_require__(373);
+var processUpdate = __webpack_require__(374);
 
 var customHandler;
 var subscribeAllHandler;
@@ -32810,16 +32848,16 @@ if (module) {
   };
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?path=__webpack_hmr&dynamicPublicPath=true", __webpack_require__(211)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, "?path=__webpack_hmr&dynamicPublicPath=true", __webpack_require__(212)(module)))
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(15))(12);
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33002,7 +33040,7 @@ ansiHTML.reset()
 
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33013,7 +33051,7 @@ module.exports = function () {
 
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33024,7 +33062,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.store = exports.router = exports.app = undefined;
 
-var _extends2 = __webpack_require__(229);
+var _extends2 = __webpack_require__(231);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
@@ -33032,21 +33070,21 @@ var _vue = __webpack_require__(14);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _axios = __webpack_require__(212);
+var _axios = __webpack_require__(213);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _router = __webpack_require__(219);
+var _router = __webpack_require__(220);
 
 var _router2 = _interopRequireDefault(_router);
 
-var _store = __webpack_require__(222);
+var _store = __webpack_require__(224);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _vuexRouterSync = __webpack_require__(371);
+var _vuexRouterSync = __webpack_require__(372);
 
-var _appRoot = __webpack_require__(363);
+var _appRoot = __webpack_require__(364);
 
 var _appRoot2 = _interopRequireDefault(_appRoot);
 
@@ -33066,7 +33104,7 @@ exports.router = _router2.default;
 exports.store = _store2.default;
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33080,11 +33118,11 @@ var _vue = __webpack_require__(14);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(374);
+var _vueRouter = __webpack_require__(375);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _routes = __webpack_require__(220);
+var _routes = __webpack_require__(221);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33098,7 +33136,7 @@ var router = new _vueRouter2.default({
 exports.default = router;
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33109,40 +33147,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.routes = undefined;
 
-var _homePage = __webpack_require__(210);
+var _homePage = __webpack_require__(211);
 
 var _homePage2 = _interopRequireDefault(_homePage);
 
-var _aloha = __webpack_require__(209);
+var _aloha = __webpack_require__(210);
 
 var _aloha2 = _interopRequireDefault(_aloha);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var routes = exports.routes = [{ path: '/', component: _homePage2.default, display: 'Home', style: 'glyphicon glyphicon-home' }, { path: '/aloha', component: _aloha2.default, display: 'Aloha', style: 'glyphicon glyphicon-th-list' }];
-
-/***/ }),
-/* 221 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _vueChartjs = __webpack_require__(361);
-
-var reactiveProp = _vueChartjs.mixins.reactiveProp;
-exports.default = {
-    extends: _vueChartjs.Line,
-    mixins: [reactiveProp],
-    props: ['options'],
-    mounted: function mounted() {
-        this.renderChart(this.chartData, this.options);
-    }
-};
 
 /***/ }),
 /* 222 */
@@ -33155,7 +33170,60 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _defineProperty2 = __webpack_require__(228);
+var _vueChartjs = __webpack_require__(209);
+
+var reactiveProp = _vueChartjs.mixins.reactiveProp;
+exports.default = {
+    extends: _vueChartjs.Bar,
+    mixins: [reactiveProp],
+    props: ['options'],
+    mounted: function mounted() {
+
+        Chart.scaleService.updateScaleDefaults('linear', {
+            ticks: {
+                min: 0
+            }
+        });
+        Chart.defaults.global.legend.display = false;
+        this.renderChart(this.chartData, this.options);
+    }
+};
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vueChartjs = __webpack_require__(209);
+
+var reactiveProp = _vueChartjs.mixins.reactiveProp;
+exports.default = {
+    extends: _vueChartjs.Line,
+    mixins: [reactiveProp],
+    props: ['options'],
+    mounted: function mounted() {
+        this.renderChart(this.chartData, this.options);
+    }
+};
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _defineProperty2 = __webpack_require__(230);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -33163,7 +33231,7 @@ var _vue = __webpack_require__(14);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vuex = __webpack_require__(375);
+var _vuex = __webpack_require__(376);
 
 var _vuex2 = _interopRequireDefault(_vuex);
 
@@ -33196,7 +33264,7 @@ exports.default = new _vuex2.default.Store({
 });
 
 /***/ }),
-/* 223 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33206,23 +33274,28 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _axios = __webpack_require__(212);
+var _axios = __webpack_require__(213);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _jquery = __webpack_require__(377);
+var _jquery = __webpack_require__(378);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _LineChart = __webpack_require__(221);
+var _LineChart = __webpack_require__(223);
 
 var _LineChart2 = _interopRequireDefault(_LineChart);
+
+var _BarChart = __webpack_require__(222);
+
+var _BarChart2 = _interopRequireDefault(_BarChart);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     components: {
-        LineChart: _LineChart2.default
+        LineChart: _LineChart2.default,
+        BarChart: _BarChart2.default
     },
     data: function data() {
         return {
@@ -33261,9 +33334,7 @@ exports.default = {
                     2: 5,
                     3: 10,
                     4: 15,
-                    5: 20,
-                    6: 50,
-                    7: 100
+                    5: 20
                 }
             },
             inputParameters: {
@@ -33290,8 +33361,9 @@ exports.default = {
                     averageOfPackagesLifeTime: null
                 }
             },
-            datacollection: null,
-            dataForChart: null
+            chartsData: {
+                collisionsData: null
+            }
         };
     },
     mounted: function mounted() {},
@@ -33312,7 +33384,7 @@ exports.default = {
                 console.log(response.data);
 
                 _this.updateResults(response.data);
-                _this.fillData(response.data);
+                _this.fillChart(response.data);
             });
         },
         updateResults: function updateResults(data) {
@@ -33330,17 +33402,16 @@ exports.default = {
             this.outputResults.notAdapted.averageOfBackloggedPackages = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages).toFixed(0);
             this.outputResults.notAdapted.averageOfPackagesLifeTime = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime).toFixed(2);
         },
-        fillData: function fillData(data) {
-            this.datacollection = {
-                labels: [1, 2, 3, 4, 5],
+        fillChart: function fillChart(data) {
+            this.chartsData.collisionsData = {
                 datasets: [{
-                    label: 'Data One',
+                    label: 'Адаптивный алгоритм',
                     backgroundColor: '#009a09',
-                    data: data.adapted.averageOfBackloggedPackages
+                    data: [Math.round(this.findAverageInArray(data.adapted.collisions))]
                 }, {
-                    label: 'Data One',
+                    label: 'Неадаптивный алгоритм',
                     backgroundColor: '#f87979',
-                    data: data.notAdapted.averageOfBackloggedPackages
+                    data: [Math.round(this.findAverageInArray(data.notAdapted.collisions))]
                 }]
             };
         },
@@ -33360,7 +33431,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 224 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33374,11 +33445,11 @@ var _vue = __webpack_require__(14);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _homePage = __webpack_require__(210);
+var _homePage = __webpack_require__(211);
 
 var _homePage2 = _interopRequireDefault(_homePage);
 
-var _aloha = __webpack_require__(209);
+var _aloha = __webpack_require__(210);
 
 var _aloha2 = _interopRequireDefault(_aloha);
 
@@ -33394,7 +33465,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 225 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33410,19 +33481,19 @@ exports.default = {
 };
 
 /***/ }),
-/* 226 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(278), __esModule: true };
-
-/***/ }),
-/* 227 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(279), __esModule: true };
-
-/***/ }),
 /* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(280), __esModule: true };
+
+/***/ }),
+/* 229 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(281), __esModule: true };
+
+/***/ }),
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33430,7 +33501,7 @@ module.exports = { "default": __webpack_require__(279), __esModule: true };
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(227);
+var _defineProperty = __webpack_require__(229);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -33452,7 +33523,7 @@ exports.default = function (obj, key, value) {
 };
 
 /***/ }),
-/* 229 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33460,7 +33531,7 @@ exports.default = function (obj, key, value) {
 
 exports.__esModule = true;
 
-var _assign = __webpack_require__(226);
+var _assign = __webpack_require__(228);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -33481,18 +33552,18 @@ exports.default = _assign2.default || function (target) {
 };
 
 /***/ }),
-/* 230 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
  * @namespace Chart
  */
-var Chart = __webpack_require__(249)();
+var Chart = __webpack_require__(251)();
 
 Chart.helpers = __webpack_require__(1);
 
 // @todo dispatch these helpers into appropriated helpers/helpers.* file and write unit tests!
-__webpack_require__(248)(Chart);
+__webpack_require__(250)(Chart);
 
 Chart.defaults = __webpack_require__(2);
 Chart.Element = __webpack_require__(7);
@@ -33503,40 +33574,40 @@ Chart.platform = __webpack_require__(59);
 Chart.plugins = __webpack_require__(58);
 Chart.Ticks = __webpack_require__(24);
 
-__webpack_require__(245)(Chart);
-__webpack_require__(246)(Chart);
 __webpack_require__(247)(Chart);
-__webpack_require__(251)(Chart);
-__webpack_require__(250)(Chart);
+__webpack_require__(248)(Chart);
+__webpack_require__(249)(Chart);
+__webpack_require__(253)(Chart);
 __webpack_require__(252)(Chart);
+__webpack_require__(254)(Chart);
 
-__webpack_require__(268)(Chart);
-__webpack_require__(266)(Chart);
-__webpack_require__(267)(Chart);
-__webpack_require__(269)(Chart);
 __webpack_require__(270)(Chart);
+__webpack_require__(268)(Chart);
+__webpack_require__(269)(Chart);
 __webpack_require__(271)(Chart);
+__webpack_require__(272)(Chart);
+__webpack_require__(273)(Chart);
 
 // Controllers must be loaded after elements
 // See Chart.core.datasetController.dataElementType
-__webpack_require__(238)(Chart);
-__webpack_require__(239)(Chart);
 __webpack_require__(240)(Chart);
 __webpack_require__(241)(Chart);
 __webpack_require__(242)(Chart);
 __webpack_require__(243)(Chart);
 __webpack_require__(244)(Chart);
+__webpack_require__(245)(Chart);
+__webpack_require__(246)(Chart);
 
-__webpack_require__(231)(Chart);
-__webpack_require__(232)(Chart);
 __webpack_require__(233)(Chart);
 __webpack_require__(234)(Chart);
 __webpack_require__(235)(Chart);
 __webpack_require__(236)(Chart);
 __webpack_require__(237)(Chart);
+__webpack_require__(238)(Chart);
+__webpack_require__(239)(Chart);
 
 // Loading built-it plugins
-var plugins = __webpack_require__(262);
+var plugins = __webpack_require__(264);
 for (var k in plugins) {
 	if (plugins.hasOwnProperty(k)) {
 		Chart.plugins.register(plugins[k]);
@@ -33609,7 +33680,7 @@ Chart.layoutService = Chart.layouts;
 
 
 /***/ }),
-/* 231 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33627,7 +33698,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 232 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33644,7 +33715,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 233 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33662,7 +33733,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 234 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33680,7 +33751,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 235 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33698,7 +33769,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 236 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33716,7 +33787,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 237 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33731,7 +33802,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 238 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34242,7 +34313,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 239 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34429,7 +34500,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 240 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34735,7 +34806,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 241 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35075,7 +35146,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 242 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35304,7 +35375,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 243 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35479,7 +35550,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 244 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35528,7 +35599,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 245 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35707,7 +35778,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 246 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36661,7 +36732,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 247 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36998,7 +37069,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 248 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37616,7 +37687,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 249 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37672,7 +37743,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 250 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38615,7 +38686,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 251 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38668,7 +38739,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 252 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39623,7 +39694,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 253 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39737,7 +39808,7 @@ module.exports = Element.extend({
 
 
 /***/ }),
-/* 254 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39835,7 +39906,7 @@ module.exports = Element.extend({
 
 
 /***/ }),
-/* 255 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39948,7 +40019,7 @@ module.exports = Element.extend({
 
 
 /***/ }),
-/* 256 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40172,7 +40243,7 @@ module.exports = Element.extend({
 
 
 /***/ }),
-/* 257 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40393,7 +40464,7 @@ helpers.drawRoundedRectangle = function(ctx) {
 
 
 /***/ }),
-/* 258 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40650,7 +40721,7 @@ helpers.easingEffects = effects;
 
 
 /***/ }),
-/* 259 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40753,7 +40824,7 @@ module.exports = {
 
 
 /***/ }),
-/* 260 */
+/* 262 */
 /***/ (function(module, exports) {
 
 /**
@@ -40774,7 +40845,7 @@ module.exports = {
 
 
 /***/ }),
-/* 261 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41238,20 +41309,20 @@ helpers.removeEvent = removeEventListener;
 
 
 /***/ }),
-/* 262 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = {};
-module.exports.filler = __webpack_require__(263);
-module.exports.legend = __webpack_require__(264);
-module.exports.title = __webpack_require__(265);
+module.exports.filler = __webpack_require__(265);
+module.exports.legend = __webpack_require__(266);
+module.exports.title = __webpack_require__(267);
 
 
 /***/ }),
-/* 263 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41576,7 +41647,7 @@ module.exports = {
 
 
 /***/ }),
-/* 264 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42159,7 +42230,7 @@ module.exports = {
 
 
 /***/ }),
-/* 265 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42418,7 +42489,7 @@ module.exports = {
 
 
 /***/ }),
-/* 266 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42558,7 +42629,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 267 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42756,7 +42827,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 268 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42949,7 +43020,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 269 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43303,7 +43374,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 270 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43839,7 +43910,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 271 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44629,11 +44700,11 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 272 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var colorNames = __webpack_require__(275);
+var colorNames = __webpack_require__(277);
 
 module.exports = {
    getRgba: getRgba,
@@ -44856,7 +44927,7 @@ for (var name in colorNames) {
 
 
 /***/ }),
-/* 273 */
+/* 275 */
 /***/ (function(module, exports) {
 
 /* MIT license */
@@ -45560,10 +45631,10 @@ for (var key in cssKeywords) {
 
 
 /***/ }),
-/* 274 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var conversions = __webpack_require__(273);
+var conversions = __webpack_require__(275);
 
 var convert = function() {
    return new Converter();
@@ -45657,7 +45728,7 @@ Converter.prototype.getValues = function(space) {
 module.exports = convert;
 
 /***/ }),
-/* 275 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45816,58 +45887,58 @@ module.exports = {
 
 
 /***/ }),
-/* 276 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(84);
-__webpack_require__(336);
-__webpack_require__(334);
-__webpack_require__(340);
-__webpack_require__(337);
-__webpack_require__(343);
-__webpack_require__(345);
-__webpack_require__(333);
-__webpack_require__(339);
-__webpack_require__(330);
-__webpack_require__(344);
-__webpack_require__(328);
-__webpack_require__(342);
-__webpack_require__(341);
-__webpack_require__(335);
-__webpack_require__(338);
-__webpack_require__(327);
-__webpack_require__(329);
-__webpack_require__(332);
-__webpack_require__(331);
-__webpack_require__(346);
-__webpack_require__(83);
-module.exports = __webpack_require__(12).Array;
-
-
-/***/ }),
-/* 277 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(347);
-__webpack_require__(84);
-__webpack_require__(349);
-__webpack_require__(348);
-module.exports = __webpack_require__(12).Promise;
-
-
-/***/ }),
 /* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(303);
-module.exports = __webpack_require__(32).Object.assign;
+__webpack_require__(84);
+__webpack_require__(338);
+__webpack_require__(336);
+__webpack_require__(342);
+__webpack_require__(339);
+__webpack_require__(345);
+__webpack_require__(347);
+__webpack_require__(335);
+__webpack_require__(341);
+__webpack_require__(332);
+__webpack_require__(346);
+__webpack_require__(330);
+__webpack_require__(344);
+__webpack_require__(343);
+__webpack_require__(337);
+__webpack_require__(340);
+__webpack_require__(329);
+__webpack_require__(331);
+__webpack_require__(334);
+__webpack_require__(333);
+__webpack_require__(348);
+__webpack_require__(83);
+module.exports = __webpack_require__(12).Array;
 
 
 /***/ }),
 /* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(304);
+__webpack_require__(349);
+__webpack_require__(84);
+__webpack_require__(351);
+__webpack_require__(350);
+module.exports = __webpack_require__(12).Promise;
+
+
+/***/ }),
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(305);
+module.exports = __webpack_require__(32).Object.assign;
+
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(306);
 var $Object = __webpack_require__(32).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
@@ -45875,7 +45946,7 @@ module.exports = function defineProperty(it, key, desc) {
 
 
 /***/ }),
-/* 280 */
+/* 282 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -45885,7 +45956,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 281 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(41);
@@ -45896,14 +45967,14 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 282 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(67);
-var toLength = __webpack_require__(299);
-var toAbsoluteIndex = __webpack_require__(298);
+var toLength = __webpack_require__(301);
+var toAbsoluteIndex = __webpack_require__(300);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -45925,7 +45996,7 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 283 */
+/* 285 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -45936,11 +46007,11 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 284 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(280);
+var aFunction = __webpack_require__(282);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -45962,7 +46033,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 285 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(41);
@@ -45975,7 +46046,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 286 */
+/* 288 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -45985,11 +46056,11 @@ module.exports = (
 
 
 /***/ }),
-/* 287 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(65);
-var createDesc = __webpack_require__(295);
+var createDesc = __webpack_require__(297);
 module.exports = __webpack_require__(33) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -45999,32 +46070,32 @@ module.exports = __webpack_require__(33) ? function (object, key, value) {
 
 
 /***/ }),
-/* 288 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(33) && !__webpack_require__(39)(function () {
-  return Object.defineProperty(__webpack_require__(285)('div'), 'a', { get: function () { return 7; } }).a != 7;
+  return Object.defineProperty(__webpack_require__(287)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
 /***/ }),
-/* 289 */
+/* 291 */
 /***/ (function(module, exports) {
 
 module.exports = true;
 
 
 /***/ }),
-/* 290 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(293);
-var gOPS = __webpack_require__(291);
-var pIE = __webpack_require__(294);
-var toObject = __webpack_require__(300);
+var getKeys = __webpack_require__(295);
+var gOPS = __webpack_require__(293);
+var pIE = __webpack_require__(296);
+var toObject = __webpack_require__(302);
 var IObject = __webpack_require__(64);
 var $assign = Object.assign;
 
@@ -46056,20 +46127,20 @@ module.exports = !$assign || __webpack_require__(39)(function () {
 
 
 /***/ }),
-/* 291 */
+/* 293 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 292 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(63);
 var toIObject = __webpack_require__(67);
-var arrayIndexOf = __webpack_require__(282)(false);
-var IE_PROTO = __webpack_require__(296)('IE_PROTO');
+var arrayIndexOf = __webpack_require__(284)(false);
+var IE_PROTO = __webpack_require__(298)('IE_PROTO');
 
 module.exports = function (object, names) {
   var O = toIObject(object);
@@ -46086,12 +46157,12 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 293 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(292);
-var enumBugKeys = __webpack_require__(286);
+var $keys = __webpack_require__(294);
+var enumBugKeys = __webpack_require__(288);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -46099,14 +46170,14 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 294 */
+/* 296 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 295 */
+/* 297 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -46120,18 +46191,18 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 296 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(297)('keys');
-var uid = __webpack_require__(302);
+var shared = __webpack_require__(299)('keys');
+var uid = __webpack_require__(304);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
 
 /***/ }),
-/* 297 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(32);
@@ -46143,13 +46214,13 @@ var store = global[SHARED] || (global[SHARED] = {});
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
   version: core.version,
-  mode: __webpack_require__(289) ? 'pure' : 'global',
+  mode: __webpack_require__(291) ? 'pure' : 'global',
   copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
 });
 
 
 /***/ }),
-/* 298 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(66);
@@ -46162,7 +46233,7 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 299 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -46174,7 +46245,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 300 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
@@ -46185,7 +46256,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 301 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -46203,7 +46274,7 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 302 */
+/* 304 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -46214,17 +46285,17 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 303 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(62);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(290) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(292) });
 
 
 /***/ }),
-/* 304 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(62);
@@ -46233,7 +46304,7 @@ $export($export.S + $export.F * !__webpack_require__(33), 'Object', { defineProp
 
 
 /***/ }),
-/* 305 */
+/* 307 */
 /***/ (function(module, exports) {
 
 module.exports = function (it, Constructor, name, forbiddenField) {
@@ -46244,7 +46315,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 
 
 /***/ }),
-/* 306 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46277,7 +46348,7 @@ module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /*
 
 
 /***/ }),
-/* 307 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46299,7 +46370,7 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 
 
 /***/ }),
-/* 308 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(21);
@@ -46321,11 +46392,11 @@ module.exports = function (original) {
 
 
 /***/ }),
-/* 309 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(308);
+var speciesConstructor = __webpack_require__(310);
 
 module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
@@ -46333,7 +46404,7 @@ module.exports = function (original, length) {
 
 
 /***/ }),
-/* 310 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(18);
@@ -46364,7 +46435,7 @@ exports.RETURN = RETURN;
 
 
 /***/ }),
-/* 311 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(26) && !__webpack_require__(19)(function () {
@@ -46373,7 +46444,7 @@ module.exports = !__webpack_require__(26) && !__webpack_require__(19)(function (
 
 
 /***/ }),
-/* 312 */
+/* 314 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -46395,12 +46466,12 @@ module.exports = function (fn, args, that) {
 
 
 /***/ }),
-/* 313 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create = __webpack_require__(316);
+var create = __webpack_require__(318);
 var descriptor = __webpack_require__(47);
 var setToStringTag = __webpack_require__(48);
 var IteratorPrototype = {};
@@ -46415,7 +46486,7 @@ module.exports = function (Constructor, NAME, next) {
 
 
 /***/ }),
-/* 314 */
+/* 316 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -46424,7 +46495,7 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 315 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(5);
@@ -46499,12 +46570,12 @@ module.exports = function () {
 
 
 /***/ }),
-/* 316 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(10);
-var dPs = __webpack_require__(317);
+var dPs = __webpack_require__(319);
 var enumBugKeys = __webpack_require__(71);
 var IE_PROTO = __webpack_require__(49)('IE_PROTO');
 var Empty = function () { /* empty */ };
@@ -46546,7 +46617,7 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 317 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(28);
@@ -46565,7 +46636,7 @@ module.exports = __webpack_require__(26) ? Object.defineProperties : function de
 
 
 /***/ }),
-/* 318 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
@@ -46584,7 +46655,7 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 /***/ }),
-/* 319 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(34);
@@ -46607,7 +46678,7 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 320 */
+/* 322 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -46620,7 +46691,7 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 321 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(10);
@@ -46638,7 +46709,7 @@ module.exports = function (C, x) {
 
 
 /***/ }),
-/* 322 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var redefine = __webpack_require__(29);
@@ -46649,7 +46720,7 @@ module.exports = function (target, src, safe) {
 
 
 /***/ }),
-/* 323 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -46664,7 +46735,7 @@ module.exports = function (O, D) {
 
 
 /***/ }),
-/* 324 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(37);
@@ -46687,7 +46758,7 @@ module.exports = function (TO_STRING) {
 
 
 /***/ }),
-/* 325 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -46705,7 +46776,7 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 326 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(5);
@@ -46715,19 +46786,19 @@ module.exports = navigator && navigator.userAgent || '';
 
 
 /***/ }),
-/* 327 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(3);
 
-$export($export.P, 'Array', { copyWithin: __webpack_require__(306) });
+$export($export.P, 'Array', { copyWithin: __webpack_require__(308) });
 
 __webpack_require__(25)('copyWithin');
 
 
 /***/ }),
-/* 328 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46744,19 +46815,19 @@ $export($export.P + $export.F * !__webpack_require__(6)([].every, true), 'Array'
 
 
 /***/ }),
-/* 329 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 var $export = __webpack_require__(3);
 
-$export($export.P, 'Array', { fill: __webpack_require__(307) });
+$export($export.P, 'Array', { fill: __webpack_require__(309) });
 
 __webpack_require__(25)('fill');
 
 
 /***/ }),
-/* 330 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46773,7 +46844,7 @@ $export($export.P + $export.F * !__webpack_require__(6)([].filter, true), 'Array
 
 
 /***/ }),
-/* 331 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46794,7 +46865,7 @@ __webpack_require__(25)(KEY);
 
 
 /***/ }),
-/* 332 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46815,7 +46886,7 @@ __webpack_require__(25)(KEY);
 
 
 /***/ }),
-/* 333 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46833,7 +46904,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 
 
 /***/ }),
-/* 334 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46877,7 +46948,7 @@ $export($export.S + $export.F * !__webpack_require__(76)(function (iter) { Array
 
 
 /***/ }),
-/* 335 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46899,7 +46970,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(6)($nativ
 
 
 /***/ }),
-/* 336 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
@@ -46909,7 +46980,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(73) });
 
 
 /***/ }),
-/* 337 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46928,7 +46999,7 @@ $export($export.P + $export.F * (__webpack_require__(35) != Object || !__webpack
 
 
 /***/ }),
-/* 338 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46957,7 +47028,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(6)($nativ
 
 
 /***/ }),
-/* 339 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46974,7 +47045,7 @@ $export($export.P + $export.F * !__webpack_require__(6)([].map, true), 'Array', 
 
 
 /***/ }),
-/* 340 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47000,7 +47071,7 @@ $export($export.S + $export.F * __webpack_require__(19)(function () {
 
 
 /***/ }),
-/* 341 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47017,7 +47088,7 @@ $export($export.P + $export.F * !__webpack_require__(6)([].reduceRight, true), '
 
 
 /***/ }),
-/* 342 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47034,7 +47105,7 @@ $export($export.P + $export.F * !__webpack_require__(6)([].reduce, true), 'Array
 
 
 /***/ }),
-/* 343 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47069,7 +47140,7 @@ $export($export.P + $export.F * __webpack_require__(19)(function () {
 
 
 /***/ }),
-/* 344 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47086,7 +47157,7 @@ $export($export.P + $export.F * !__webpack_require__(6)([].some, true), 'Array',
 
 
 /***/ }),
-/* 345 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47116,14 +47187,14 @@ $export($export.P + $export.F * (fails(function () {
 
 
 /***/ }),
-/* 346 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(79)('Array');
 
 
 /***/ }),
-/* 347 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47140,7 +47211,7 @@ if (test + '' != '[object z]') {
 
 
 /***/ }),
-/* 348 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47152,15 +47223,15 @@ var classof = __webpack_require__(42);
 var $export = __webpack_require__(3);
 var isObject = __webpack_require__(21);
 var aFunction = __webpack_require__(16);
-var anInstance = __webpack_require__(305);
-var forOf = __webpack_require__(310);
-var speciesConstructor = __webpack_require__(323);
+var anInstance = __webpack_require__(307);
+var forOf = __webpack_require__(312);
+var speciesConstructor = __webpack_require__(325);
 var task = __webpack_require__(81).set;
-var microtask = __webpack_require__(315)();
+var microtask = __webpack_require__(317)();
 var newPromiseCapabilityModule = __webpack_require__(77);
-var perform = __webpack_require__(320);
-var userAgent = __webpack_require__(326);
-var promiseResolve = __webpack_require__(321);
+var perform = __webpack_require__(322);
+var userAgent = __webpack_require__(328);
+var promiseResolve = __webpack_require__(323);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -47335,7 +47406,7 @@ if (!USE_NATIVE) {
     this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
     this._n = false;          // <- notify
   };
-  Internal.prototype = __webpack_require__(322)($Promise.prototype, {
+  Internal.prototype = __webpack_require__(324)($Promise.prototype, {
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected) {
       var reaction = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -47433,7 +47504,7 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(76)(function
 
 
 /***/ }),
-/* 349 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $iterators = __webpack_require__(83);
@@ -47497,19 +47568,19 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 
 /***/ }),
-/* 350 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  XmlEntities: __webpack_require__(352),
-  Html4Entities: __webpack_require__(351),
+  XmlEntities: __webpack_require__(354),
+  Html4Entities: __webpack_require__(353),
   Html5Entities: __webpack_require__(85),
   AllHtmlEntities: __webpack_require__(85)
 };
 
 
 /***/ }),
-/* 351 */
+/* 353 */
 /***/ (function(module, exports) {
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
@@ -47662,7 +47733,7 @@ module.exports = Html4Entities;
 
 
 /***/ }),
-/* 352 */
+/* 354 */
 /***/ (function(module, exports) {
 
 var ALPHA_INDEX = {
@@ -47823,7 +47894,7 @@ module.exports = XmlEntities;
 
 
 /***/ }),
-/* 353 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -48088,10 +48159,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 353;
+webpackContext.id = 355;
 
 /***/ }),
-/* 354 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48182,7 +48253,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 355 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48274,23 +48345,23 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 356 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(354);
-exports.encode = exports.stringify = __webpack_require__(355);
+exports.decode = exports.parse = __webpack_require__(356);
+exports.encode = exports.stringify = __webpack_require__(357);
 
 
 /***/ }),
-/* 357 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ansiRegex = __webpack_require__(217)();
+var ansiRegex = __webpack_require__(218)();
 
 module.exports = function (str) {
 	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -48298,7 +48369,7 @@ module.exports = function (str) {
 
 
 /***/ }),
-/* 358 */
+/* 360 */
 /***/ (function(module, exports) {
 
 /*
@@ -48550,7 +48621,7 @@ function updateLink(linkElement, obj) {
 
 
 /***/ }),
-/* 359 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -48559,7 +48630,7 @@ function updateLink(linkElement, obj) {
 var content = __webpack_require__(51);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(358)(content, {});
+var update = __webpack_require__(360)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(true) {
@@ -48576,7 +48647,7 @@ if(true) {
 }
 
 /***/ }),
-/* 360 */
+/* 362 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48590,7 +48661,7 @@ if(true) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return Radar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return Bubble; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return Scatter; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
 
 function generateChart(chartId, chartType) {
@@ -48683,45 +48754,7 @@ var Scatter = generateChart('scatter-chart', 'scatter');
 });
 
 /***/ }),
-/* 361 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VueCharts", function() { return VueCharts; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_index_js__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BaseCharts__ = __webpack_require__(360);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Bar", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HorizontalBar", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Doughnut", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["c"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Line", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["d"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Pie", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["e"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "PolarArea", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["f"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Radar", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["g"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Bubble", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["h"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Scatter", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["i"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "mixins", function() { return __WEBPACK_IMPORTED_MODULE_0__mixins_index_js__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "generateChart", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["j"]; });
-
-
-var VueCharts = {
-  Bar: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["a" /* Bar */],
-  HorizontalBar: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["b" /* HorizontalBar */],
-  Doughnut: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["c" /* Doughnut */],
-  Line: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["d" /* Line */],
-  Pie: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["e" /* Pie */],
-  PolarArea: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["f" /* PolarArea */],
-  Radar: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["g" /* Radar */],
-  Bubble: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["h" /* Bubble */],
-  Scatter: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["i" /* Scatter */],
-  mixins: __WEBPACK_IMPORTED_MODULE_0__mixins_index_js__["a" /* default */],
-  generateChart: __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["j" /* generateChart */]
-};
-/* harmony default export */ __webpack_exports__["default"] = (VueCharts);
-
-
-/***/ }),
-/* 362 */
+/* 363 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48809,18 +48842,18 @@ var reactiveProp = {
 });
 
 /***/ }),
-/* 363 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(369)
+__webpack_require__(370)
 
 var Component = __webpack_require__(55)(
   /* script */
-  __webpack_require__(224),
+  __webpack_require__(226),
   /* template */
-  __webpack_require__(366),
+  __webpack_require__(367),
   /* scopeId */
   null,
   /* cssModules */
@@ -48847,7 +48880,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 364 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -49252,22 +49285,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.$set(_vm.outputResults.notAdapted, "averageOfPackagesLifeTime", $event.target.value)
       }
     }
-  })])])])]), _vm._v(" "), _c('div', {
-    staticClass: "small m-3",
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "card small h-auto justify-content-center m-3 chart-card"
+  }, [_c('h6', {
+    staticClass: "card-header text-center"
+  }, [_vm._v("\n                Коллизии\n            ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('bar-chart', {
     attrs: {
-      "hidden": "true"
+      "chart-data": _vm.chartsData.collisionsData
     }
-  }, [_c('line-chart', {
-    attrs: {
-      "chart-data": _vm.datacollection
-    }
-  }), _vm._v(" "), _c('button', {
-    on: {
-      "click": function($event) {
-        _vm.fillData()
-      }
-    }
-  }, [_vm._v("Randomize")])], 1)])
+  })], 1)])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "input-group-prepend"
@@ -49356,7 +49384,7 @@ if (true) {
 }
 
 /***/ }),
-/* 365 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -49378,7 +49406,7 @@ if (true) {
 }
 
 /***/ }),
-/* 366 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -49399,7 +49427,7 @@ if (true) {
 }
 
 /***/ }),
-/* 367 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -49425,7 +49453,7 @@ if(true) {
 }
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -49451,7 +49479,7 @@ if(true) {
 }
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -49477,7 +49505,7 @@ if(true) {
 }
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports) {
 
 /**
@@ -49510,7 +49538,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports) {
 
 exports.sync = function (store, router, options) {
@@ -49591,7 +49619,7 @@ function cloneRoute (to, from) {
 
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*eslint-env browser*/
@@ -49617,7 +49645,7 @@ var styles = {
   textAlign: 'left'
 };
 
-var ansiHTML = __webpack_require__(216);
+var ansiHTML = __webpack_require__(217);
 var colors = {
   reset: ['transparent', 'transparent'],
   black: '181818',
@@ -49631,7 +49659,7 @@ var colors = {
   darkgrey: '6D7891'
 };
 
-var Entities = __webpack_require__(350).AllHtmlEntities;
+var Entities = __webpack_require__(352).AllHtmlEntities;
 var entities = new Entities();
 
 function showProblems(type, lines) {
@@ -49694,7 +49722,7 @@ module.exports.showProblems = showProblems;
 
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -49846,42 +49874,42 @@ module.exports = function(hash, moduleMap, options) {
 
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(15))(14);
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(15))(16);
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(15))(2);
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(15))(3);
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(15))(35);
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(216);
 __webpack_require__(215);
-__webpack_require__(214);
-module.exports = __webpack_require__(213);
+module.exports = __webpack_require__(214);
 
 
 /***/ })

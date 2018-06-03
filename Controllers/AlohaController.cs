@@ -24,20 +24,20 @@ namespace AdaptedSlottedAlohaWeb.Controllers
             public int NumberOfIterations { get; set; }
         }
 
-        public class OutputResults
+        public class OutputResults<T>
         {
-            public Stats NotAdapted { get; set; }
-            public Stats Adapted { get; set; }
+            public T NotAdapted { get; set; }
+            public T Adapted { get; set; }
         }
 
         public class Stats
         {
-            public int[] PackagesGenerated { get; set; }
-            public int[] PackagesLeavedSystem { get; set; }
-            public int[] Collisions { get; set; }
-            public int[] BackloggedPackages { get; set; }
-            public double[] AverageOfBackloggedPackages { get; set; }
-            public double[] AverageOfPackagesLifeTime { get; set; }
+            public int[] PackagesGenerated;
+            public int[] PackagesLeavedSystem;
+            public int[] Collisions;
+            public int[] BackloggedPackages;
+            public double[] AverageOfBackloggedPackages;
+            public double[] AverageOfPackagesLifeTime;
             //public Statistics[] statistics { get; set; } = new Statistics[5];
 
             public Stats(int numberOfIterations)
@@ -49,6 +49,16 @@ namespace AdaptedSlottedAlohaWeb.Controllers
                 AverageOfBackloggedPackages = new double[numberOfIterations];
                 AverageOfPackagesLifeTime = new double[numberOfIterations];
             }
+        }
+
+        public class AverageStats
+        {
+            public double PackagesGenerated;
+            public double PackagesLeavedSystem;
+            public double Collisions;
+            public double BackloggedPackages;
+            public double AverageOfBackloggedPackages;
+            public double AverageOfPackagesLifeTime;
         }
 
         [HttpPost("[action]")]
@@ -84,10 +94,30 @@ namespace AdaptedSlottedAlohaWeb.Controllers
                 notadapted.AverageOfBackloggedPackages[i] = notAdaptedAloha._statistics.AverageOfBackloggedPackages;
                 notadapted.AverageOfPackagesLifeTime[i] = notAdaptedAloha._statistics.AverageOfPackagesLifeTime;
             }
-            var outputResults = new OutputResults()
+
+            var adaptedAverage = new AverageStats
             {
-                NotAdapted = notadapted,
-                Adapted = adapted
+                PackagesGenerated = adapted.PackagesGenerated.Average(),
+                PackagesLeavedSystem = adapted.PackagesLeavedSystem.Average(),
+                Collisions = adapted.Collisions.Average(),
+                BackloggedPackages = adapted.BackloggedPackages.Average(),
+                AverageOfBackloggedPackages = adapted.AverageOfBackloggedPackages.Average(),
+                AverageOfPackagesLifeTime = adapted.AverageOfPackagesLifeTime.Average()
+            };
+            var notadaptedAverage = new AverageStats
+            {
+                PackagesGenerated = notadapted.PackagesGenerated.Average(),
+                PackagesLeavedSystem = notadapted.PackagesLeavedSystem.Average(),
+                Collisions = notadapted.Collisions.Average(),
+                BackloggedPackages = notadapted.BackloggedPackages.Average(),
+                AverageOfBackloggedPackages = notadapted.AverageOfBackloggedPackages.Average(),
+                AverageOfPackagesLifeTime = notadapted.AverageOfPackagesLifeTime.Average()
+            };
+
+            var outputResults = new OutputResults<AverageStats>()
+            {
+                Adapted = adaptedAverage,
+                NotAdapted = notadaptedAverage,
             };
             return outputResults;
         }

@@ -100,7 +100,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="card small justify-content-center m-3">
+            <div class="chart card justify-content-center m-3">
                 <h6 class="card-header text-center">
                     Обработано пакетов
                 </h6>
@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="card small justify-content-center m-3">
+            <div class="chart card justify-content-center m-3">
                 <h6 class="card-header text-center">
                     Коллизии
                 </h6>
@@ -138,10 +138,10 @@
                 numberOfIterations: [1, 3, 5, 10, 15, 20]
             },
             inputParameters: {
-                numberOfStations: null,
-                inputFlow: null,
-                numberOfFrames: null,
-                numberOfIterations: null
+                numberOfStations: 10,
+                inputFlow: 0.5,
+                numberOfFrames: 1000,
+                numberOfIterations: 1
             },
             outputResults: {
                 adapted: {
@@ -184,36 +184,36 @@
                     console.log(response.data);
                     //this.findAverageInArray(this.dataFromServer.adapted.packagesGenerated);
                     this.updateResults(response.data);
-                    this.fillChart(response.data);
+                    this.updateCharts(response.data);
                 });
             },
             updateResults(data) {
-                this.outputResults.adapted.generatedPackages = this.findAverageInArray(data.adapted.packagesGenerated).toFixed(0);
-                this.outputResults.adapted.packagesLeavedSystem = this.findAverageInArray(data.adapted.packagesLeavedSystem).toFixed(0);
-                this.outputResults.adapted.backloggedPackages = this.findAverageInArray(data.adapted.backloggedPackages).toFixed(0);
-                this.outputResults.adapted.collisions = this.findAverageInArray(data.adapted.collisions).toFixed(0);
-                this.outputResults.adapted.averageOfBackloggedPackages = this.findAverageInArray(data.adapted.averageOfBackloggedPackages).toFixed(0);
-                this.outputResults.adapted.averageOfPackagesLifeTime = this.findAverageInArray(data.adapted.averageOfPackagesLifeTime).toFixed(2);
+                this.outputResults.adapted.generatedPackages = data.adapted.packagesGenerated.toFixed(0);
+                this.outputResults.adapted.packagesLeavedSystem = data.adapted.packagesLeavedSystem.toFixed(0);
+                this.outputResults.adapted.backloggedPackages = data.adapted.backloggedPackages.toFixed(0);
+                this.outputResults.adapted.collisions = data.adapted.collisions.toFixed(0);
+                this.outputResults.adapted.averageOfBackloggedPackages = data.adapted.averageOfBackloggedPackages.toFixed(0);
+                this.outputResults.adapted.averageOfPackagesLifeTime = data.adapted.averageOfPackagesLifeTime.toFixed(2);
 
-                this.outputResults.notAdapted.generatedPackages = this.findAverageInArray(data.notAdapted.packagesGenerated).toFixed(0);
-                this.outputResults.notAdapted.packagesLeavedSystem = this.findAverageInArray(data.notAdapted.packagesLeavedSystem).toFixed(0);
-                this.outputResults.notAdapted.backloggedPackages = this.findAverageInArray(data.notAdapted.backloggedPackages).toFixed(0);
-                this.outputResults.notAdapted.collisions = this.findAverageInArray(data.notAdapted.collisions).toFixed(0);
-                this.outputResults.notAdapted.averageOfBackloggedPackages = this.findAverageInArray(data.notAdapted.averageOfBackloggedPackages).toFixed(0);
-                this.outputResults.notAdapted.averageOfPackagesLifeTime = this.findAverageInArray(data.notAdapted.averageOfPackagesLifeTime).toFixed(2);
+                this.outputResults.notAdapted.generatedPackages = data.notAdapted.packagesGenerated.toFixed(0);
+                this.outputResults.notAdapted.packagesLeavedSystem = data.notAdapted.packagesLeavedSystem.toFixed(0);
+                this.outputResults.notAdapted.backloggedPackages = data.notAdapted.backloggedPackages.toFixed(0);
+                this.outputResults.notAdapted.collisions = data.notAdapted.collisions.toFixed(0);
+                this.outputResults.notAdapted.averageOfBackloggedPackages = data.notAdapted.averageOfBackloggedPackages.toFixed(0);
+                this.outputResults.notAdapted.averageOfPackagesLifeTime = data.notAdapted.averageOfPackagesLifeTime.toFixed(2);
             },
-            fillChart(data) {
+            updateCharts(data) {
                 this.chartsData.collisionsData = {
                     //labels: Array.from(Array(data.notAdapted.collisions.length).keys()),
                     datasets: [
                         {
                             label: 'Адаптивный алгоритм',
                             backgroundColor: '#009a09',
-                            data: [Math.round(this.findAverageInArray(data.adapted.collisions))]
+                            data: [data.adapted.collisions]
                         }, {
                             label: 'Неадаптивный алгоритм',
                             backgroundColor: '#f87979',
-                            data: [Math.round(this.findAverageInArray(data.notAdapted.collisions))]
+                            data: [data.notAdapted.collisions]
                         }
                     ]
                 };
@@ -224,34 +224,21 @@
                         {
                             label: 'Адаптивный алгоритм',
                             backgroundColor: '#d28eca',
-                            data: [Math.round(this.findAverageInArray(data.adapted.packagesLeavedSystem))]
+                            data: [data.adapted.packagesLeavedSystem]
                         }, {
                             label: 'Неадаптивный алгоритм',
                             backgroundColor: '#656abb',
-                            data: [Math.round(this.findAverageInArray(data.notAdapted.packagesLeavedSystem))]
+                            data: [data.notAdapted.packagesLeavedSystem]
                         }
                     ]
                 };
-            },
-            getRandomInt() {
-                return Math.floor(Math.random() * (50 - 5 + 1)) + 5
-            },
-            findAverageInArray(arr) {
-                //console.log("FIND AVERAGE");
-                //console.log(arr);
-                let count = arr.length;
-                arr = arr.reduce((previous, current) => current += previous);
-                arr /= count;
-                //console.log(arr);
-                return arr;
             }
-
         },
     }
 </script>
 <style>
-    .small {
-        max-width: 600px;
+    .chart {
+        max-width: 400px;
         margin: 150px auto;
     }
 

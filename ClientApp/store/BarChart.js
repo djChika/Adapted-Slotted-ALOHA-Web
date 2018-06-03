@@ -14,6 +14,7 @@ export default {
                 min: 0
             }
         });
+        Chart.defaults.bar.scales.xAxes[0].barThickness  = 55;
         Chart.defaults.global.legend.display = false;
         this.renderChart(this.chartData, this.options)
     }

@@ -63,8 +63,8 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text label-result" style="width:180px">Обработано пакетов </label>
                         </div>
-                        <input type="text" class="form-control text-center input-result" v-model="outputResults.adapted.packagesLeavedSystem">
-                        <input type="text" class="form-control text-center input-result" v-model="outputResults.notAdapted.packagesLeavedSystem">
+                        <input type="text" class="form-control text-center input-result label-adapted-packagesLeavedSystem" v-model="outputResults.adapted.packagesLeavedSystem">
+                        <input type="text" class="form-control text-center input-result label-notAdapted-packagesLeavedSystem" v-model="outputResults.notAdapted.packagesLeavedSystem">
                     </div>
                     <div class="input-group input-group-sm my-3">
                         <div class="input-group-prepend">
@@ -78,8 +78,8 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text label-result">Число коллизий </label>
                         </div>
-                        <input type="text" class="form-control text-center input-result adapted" v-model="outputResults.adapted.collisions">
-                        <input type="text" class="form-control text-center input-result notadapted" v-model="outputResults.notAdapted.collisions">
+                        <input type="text" class="form-control text-center input-result label-adapted-collision" v-model="outputResults.adapted.collisions">
+                        <input type="text" class="form-control text-center input-result label-notAdapted-collision" v-model="outputResults.notAdapted.collisions">
                     </div>
 
                     <div class="input-group input-group-sm my-3">
@@ -98,7 +98,18 @@
                     </div>
                 </div>
             </div>
-            <div class="card small h-auto justify-content-center m-3 chart-card">
+        </div>
+        <div class="row justify-content-center">
+            <div class="card small justify-content-center m-3">
+                <h6 class="card-header text-center">
+                    Обработано пакетов
+                </h6>
+                <div class="card-body">
+                    <bar-chart :chart-data="chartsData.packagesLeavedSystem"></bar-chart>
+                </div>
+            </div>
+
+            <div class="card small justify-content-center m-3">
                 <h6 class="card-header text-center">
                     Коллизии
                 </h6>
@@ -121,42 +132,10 @@
         },
         data: () => ({
             inputValues: {
-                numberOfStations: {
-                    1: 5,
-                    2: 10,
-                    3: 15,
-                    4: 20,
-                    5: 50,
-                    6: 100
-                },
-                inputFlow: {
-                    1: 0.1,
-                    2: 0.2,
-                    3: 0.3,
-                    4: 0.4,
-                    5: 0.5,
-                    6: 0.6,
-                    7: 0.7,
-                    8: 0.8,
-                    9: 0.9,
-                    10: 1.0
-                },
-                numberOfFrames: {
-                    1: 100,
-                    2: 500,
-                    3: 1000,
-                    4: 5000,
-                    5: 10000,
-                    6: 50000,
-                    7: 100000
-                },
-                numberOfIterations: {
-                    1: 1,
-                    2: 5,
-                    3: 10,
-                    4: 15,
-                    5: 20,
-                }
+                numberOfStations: [1, 3, 5, 10, 15, 20, 30, 50, 100],
+                inputFlow: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+                numberOfFrames: [100, 500, 1000, 5000, 10000, 50000, 100000],
+                numberOfIterations: [1, 3, 5, 10, 15, 20]
             },
             inputParameters: {
                 numberOfStations: null,
@@ -184,7 +163,7 @@
             },
             chartsData: {
                 collisionsData: null,
-                //lifeTimeData: null
+                packagesLeavedSystem: null
             }
         }),
         mounted: function () {
@@ -238,6 +217,21 @@
                         }
                     ]
                 };
+
+                this.chartsData.packagesLeavedSystem = {
+                    //labels: Array.from(Array(data.notAdapted.collisions.length).keys()),
+                    datasets: [
+                        {
+                            label: 'Адаптивный алгоритм',
+                            backgroundColor: '#d28eca',
+                            data: [Math.round(this.findAverageInArray(data.adapted.packagesLeavedSystem))]
+                        }, {
+                            label: 'Неадаптивный алгоритм',
+                            backgroundColor: '#656abb',
+                            data: [Math.round(this.findAverageInArray(data.notAdapted.packagesLeavedSystem))]
+                        }
+                    ]
+                };
             },
             getRandomInt() {
                 return Math.floor(Math.random() * (50 - 5 + 1)) + 5
@@ -261,12 +255,20 @@
         margin: 150px auto;
     }
 
-    .adapted {
-        background: rgba(92,184,92,0.4);
+    .label-adapted-collision {
+        background: rgba(92,184,92,0.45);
     }
 
-    .notadapted {
-        background: rgba(217,83,79,0.4);
+    .label-notAdapted-collision {
+        background: rgba(217,83,79,0.45);
+    }
+
+    .label-adapted-packagesLeavedSystem {
+        background: rgba(195,155,255,0.6);
+    }
+
+    .label-notAdapted-packagesLeavedSystem {
+        background: rgba(159,155,255,0.75);
     }
 
     .input-card {

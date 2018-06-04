@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MathNet.Numerics.Distributions;
 
-namespace AdaptedSlottedAlohaWeb.Controllers.Aloha
+namespace AdaptedSlottedAloha
 {
     internal class Station
     {

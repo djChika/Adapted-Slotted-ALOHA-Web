@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using AdaptedSlottedAlohaWeb.Controllers.Aloha;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AdaptedSlottedAlohaWeb.Controllers
+namespace AdaptedSlottedAloha.Web.Controllers
 {
     [Route("api/[controller]")]
     public class AlohaController : Controller
@@ -69,7 +65,7 @@ namespace AdaptedSlottedAlohaWeb.Controllers
 
             for (var i = 0; i < inputParameters.NumberOfIterations; i++)
             {
-                var adaptedAloha = new Aloha.Engine(
+                var adaptedAloha = new AdaptedSlottedAloha.Engine(
                     inputParameters.NumberOfStations,
                     inputParameters.InputFlow,
                     inputParameters.NumberOfFrames, true);
@@ -82,7 +78,7 @@ namespace AdaptedSlottedAlohaWeb.Controllers
                 adapted.AverageOfPackagesLifeTime[i] = adaptedAloha._statistics.AverageOfPackagesLifeTime;
 
 
-                var notAdaptedAloha = new Aloha.Engine(
+                var notAdaptedAloha = new AdaptedSlottedAloha.Engine(
                     inputParameters.NumberOfStations,
                     inputParameters.InputFlow,
                     inputParameters.NumberOfFrames, false);

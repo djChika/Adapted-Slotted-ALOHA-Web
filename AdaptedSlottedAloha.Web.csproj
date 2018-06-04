@@ -3,7 +3,6 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MathNet.Numerics" Version="4.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
@@ -14,9 +13,16 @@
     <!-- Files not to show in IDE -->
     <None Remove="Controllers\AlohaController.cs.old" />
     <None Remove="yarn.lock" />
+    <Compile Remove="AdaptedSlottedAloha\**" />
+    <Content Remove="AdaptedSlottedAloha\**" />
 
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
     <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="AdaptedSlottedAloha\**" />
+    <None Remove="AdaptedSlottedAloha\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AdaptedSlottedAloha\AdaptedSlottedAloha.csproj" />
   </ItemGroup>
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->

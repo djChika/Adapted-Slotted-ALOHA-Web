@@ -208,11 +208,11 @@
                     datasets: [
                         {
                             label: 'Адаптивный алгоритм',
-                            backgroundColor: 'rgba(0, 154, 9, 0.7)',
+                            backgroundColor: '#009a09',
                             data: [data.adapted.collisions]
                         }, {
                             label: 'Неадаптивный алгоритм',
-                            backgroundColor: 'rgba(248, 121, 121, 0.7)',
+                            backgroundColor: '#f87979',
                             data: [data.notAdapted.collisions]
                         }
                     ]
@@ -223,11 +223,11 @@
                     datasets: [
                         {
                             label: 'Адаптивный алгоритм',
-                            backgroundColor: 'rgba(210, 142, 202, 0.7)',
+                            backgroundColor: '#d28eca',
                             data: [data.adapted.packagesLeavedSystem]
                         }, {
                             label: 'Неадаптивный алгоритм',
-                            backgroundColor: 'rgba(101, 106, 187, 0.7)',
+                            backgroundColor: '#656abb',
                             data: [data.notAdapted.packagesLeavedSystem]
                         }
                     ]

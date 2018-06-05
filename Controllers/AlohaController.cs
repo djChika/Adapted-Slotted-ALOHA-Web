@@ -6,11 +6,11 @@ namespace AdaptedSlottedAloha.Web.Controllers
     [Route("api/[controller]")]
     public class AlohaController : Controller
     {
-        [HttpGet("[action]")]
-        public string Data()
-        {
-            return "Hello, I'm Vera!";
-        }
+        //    [HttpGet("[action]")]
+        //    public string Data()
+        //    {
+        //        return "Hello, I'm Vera!";
+        //    }
 
         public class InputParameters
         {
@@ -110,7 +110,7 @@ namespace AdaptedSlottedAloha.Web.Controllers
                 AverageOfPackagesLifeTime = notadapted.AverageOfPackagesLifeTime.Average()
             };
 
-            var outputResults = new OutputResults<AverageStats>()
+            var outputResults = new OutputResults<AverageStats>
             {
                 Adapted = adaptedAverage,
                 NotAdapted = notadaptedAverage,

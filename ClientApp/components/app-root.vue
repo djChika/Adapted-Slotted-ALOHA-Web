@@ -8,7 +8,7 @@
 <script>
     import Vue from 'vue'
     import HomePage from './home-page'
-    import Aloha from './aloha'
+    import Aloha from './aloha-simulator'
 
 
     Vue.component('home-page', HomePage);

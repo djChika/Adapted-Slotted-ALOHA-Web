@@ -11,9 +11,9 @@
     </div>
 </template>
 <script>
-    import InputData from './modules/InputData'
-    import OutputResults from './modules/OutputResults'
-    import MyBarChart from './modules/Charts/MyBarChart'
+    import InputData from './AlohaSimulator/InputData'
+    import OutputResults from './AlohaSimulator/OutputResults'
+    import MyBarChart from './AlohaSimulator/Charts/MyBarChart'
     export default {
         components: {
             InputData,
@@ -28,7 +28,7 @@
                     colors: ['rgba(210, 142, 202, 0.7)', 'rgba(101, 106, 187, 0.7)']
                 }
             },
-            collisionData: function () {
+            collisionData() {
                 return {
                     labels: ['Адаптивный', 'Неадаптивный'],
                     dataset: [this.$store.getters.AdaptedCollisions, this.$store.getters.NotAdaptedCollisions],
@@ -39,8 +39,4 @@
     }
 </script>
 <style>
-    .chart {
-        max-width: 350px;
-        margin: 150px auto;
-    }
 </style>

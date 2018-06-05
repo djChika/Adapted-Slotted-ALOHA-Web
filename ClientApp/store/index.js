@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import inputData from './modules/inputData'
-import outputResults from './modules/outputResults'
+import inputData from './AlohaSimulator/inputData'
+import outputResults from './AlohaSimulator/outputResults'
 
 Vue.use(Vuex)
 

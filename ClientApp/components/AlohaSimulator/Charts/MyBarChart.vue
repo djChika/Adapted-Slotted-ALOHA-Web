@@ -15,7 +15,7 @@
             BarChart
         },
 
-        props: ['name','data'],
+        props: ['name', 'data'],
         data() {
             return {
                 title: this.name
@@ -38,4 +38,8 @@
     }
 </script>
 <style>
+    .chart {
+        max-width: 350px;
+        margin: 150px auto;
+    }
 </style>

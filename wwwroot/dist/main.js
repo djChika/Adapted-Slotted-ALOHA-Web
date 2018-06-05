@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d176acbca537461f0c77"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "42c7bec234ac8cf5b6f2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -18370,7 +18370,7 @@ exports = module.exports = __webpack_require__(16)();
 
 
 // module
-exports.push([module.i, ".main-nav li .glyphicon {\n    margin-right: 10px;\n}\n\n/* Highlighting rules for nav menu items */\n.main-nav li a.active,\n.main-nav li a.active:hover,\n.main-nav li a.active:focus {\n    background-color: #4189C7;\n    color: white;\n}\n\n/* Keep the nav menu independent of scrolling and on top of other items */\n.main-nav {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 1;\n}\n\n@media {\n    body {\n        background: #f2f2f2;\n    }\n}\n\n@media (max-width: 767px) {\n    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */\n    body {\n        padding-top: 20px;\n    }\n}\n\n@media (min-width: 768px) {\n    /* On small screens, convert the nav menu to a vertical sidebar */\n    .main-nav {\n        height: 100%;\n        width: calc(25% - 20px);\n    }\n    .main-nav .navbar {\n        border-radius: 0px;\n        border-width: 0px;\n        height: 100%;\n    }\n    .main-nav .navbar-header {\n        float: none;\n    }\n    .main-nav .navbar-collapse {\n        border-top: 1px solid #444;\n        padding: 0px;\n    }\n    .main-nav .navbar ul {\n        float: none;\n    }\n    .main-nav .navbar li {\n        float: none;\n        font-size: 15px;\n        margin: 6px;\n    }\n    .main-nav .navbar li a {\n        padding: 10px 16px;\n        border-radius: 4px;\n    }\n    .main-nav .navbar a {\n        /* If a menu item's text is too long, truncate it */\n        width: 100%;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n    }\n}\n", ""]);
+exports.push([module.i, ".main-nav li .glyphicon {\n    margin-right: 10px;\n}\n\n/* Highlighting rules for nav menu items */\n.main-nav li a.active,\n.main-nav li a.active:hover,\n.main-nav li a.active:focus {\n    background-color: #4189C7;\n    color: white;\n}\n\n/* Keep the nav menu independent of scrolling and on top of other items */\n.main-nav {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 1;\n}\n\n@media {\n    body {\n        background: rgb(246,246,246);\n    }\n}\n\n@media (max-width: 767px) {\n    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */\n    body {\n        padding-top: 20px;\n    }\n}\n\n@media (min-width: 768px) {\n    /* On small screens, convert the nav menu to a vertical sidebar */\n    .main-nav {\n        height: 100%;\n        width: calc(25% - 20px);\n    }\n    .main-nav .navbar {\n        border-radius: 0px;\n        border-width: 0px;\n        height: 100%;\n    }\n    .main-nav .navbar-header {\n        float: none;\n    }\n    .main-nav .navbar-collapse {\n        border-top: 1px solid #444;\n        padding: 0px;\n    }\n    .main-nav .navbar ul {\n        float: none;\n    }\n    .main-nav .navbar li {\n        float: none;\n        font-size: 15px;\n        margin: 6px;\n    }\n    .main-nav .navbar li a {\n        padding: 10px 16px;\n        border-radius: 4px;\n    }\n    .main-nav .navbar a {\n        /* If a menu item's text is too long, truncate it */\n        width: 100%;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n    }\n}\n", ""]);
 
 // exports
 
@@ -18384,7 +18384,7 @@ exports = module.exports = __webpack_require__(16)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"aloha-simulator.vue","sourceRoot":""}]);
+exports.push([module.i, "\n#aloha {\n    background-color: rgb(253,253,253);\n}\n", "", {"version":3,"sources":["C:/Users/Chika/Documents/RiderProjects/Adapted-Slotted-ALOHA-Web/ClientApp/components/aloha-simulator.vue?087b816a"],"names":[],"mappings":";AAyCA;IACA,mCAAA;CACA","file":"aloha-simulator.vue","sourcesContent":["<template>\r\n    <div id=\"aloha\" class=\"m-auto border rounded\">\r\n        <div class=\"row justify-content-center\">\r\n            <InputData></InputData>\r\n            <OutputResults></OutputResults>\r\n        </div>\r\n        <div class=\"row justify-content-center\">\r\n            <MyBarChart name=\"Обработано пакетов\" :data=\"packagesLeavedSystem \"></MyBarChart>\r\n            <MyBarChart name=\"Коллизии\" :data=\"collisionData\"></MyBarChart>\r\n        </div>\r\n    </div>\r\n</template>\r\n<script>\r\n    import InputData from './AlohaSimulator/InputData'\r\n    import OutputResults from './AlohaSimulator/OutputResults'\r\n    import MyBarChart from './AlohaSimulator/Charts/MyBarChart'\r\n    export default {\r\n        components: {\r\n            InputData,\r\n            OutputResults,\r\n            MyBarChart\r\n        },\r\n        computed: {\r\n            packagesLeavedSystem() {\r\n                return {\r\n                    labels: ['Адаптивный', 'Неадаптивный'],\r\n                    dataset: [this.$store.getters.AdaptedPackagesLeavedSystem, this.$store.getters.NotAdaptedPackagesLeavedSystem],\r\n                    colors: ['rgba(210, 142, 202, 0.7)', 'rgba(101, 106, 187, 0.7)']\r\n                }\r\n            },\r\n            collisionData() {\r\n                return {\r\n                    labels: ['Адаптивный', 'Неадаптивный'],\r\n                    dataset: [this.$store.getters.AdaptedCollisions, this.$store.getters.NotAdaptedCollisions],\r\n                    colors: ['rgba(0, 154, 9, 0.7)', 'rgba(248, 121, 121, 0.7)']\r\n                }\r\n            }\r\n        },\r\n    }\r\n</script>\r\n<style>\r\n    #aloha {\r\n        background-color: rgb(253,253,253);\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -49225,7 +49225,7 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "m-auto",
+    staticClass: "m-auto border rounded",
     attrs: {
       "id": "aloha"
     }

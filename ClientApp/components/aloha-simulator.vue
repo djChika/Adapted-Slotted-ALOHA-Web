@@ -1,5 +1,5 @@
 <template>
-    <div class="m-auto" id="aloha">
+    <div id="aloha" class="m-auto border rounded">
         <div class="row justify-content-center">
             <InputData></InputData>
             <OutputResults></OutputResults>
@@ -39,4 +39,7 @@
     }
 </script>
 <style>
+    #aloha {
+        background-color: rgb(253,253,253);
+    }
 </style>

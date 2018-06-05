@@ -12,8 +12,8 @@ namespace AdaptedSlottedAloha
         public bool Adapted;
 
         private Server _server;
-        public Statistics _statistics;
-        List<Station> _stations = new List<Station>();
+        public Statistics Statistics;
+        private List<Station> _stations = new List<Station>();
 
         public Engine(int numberOfStations, double inputFlow, int numberOfFrames, bool adapted)
         {
@@ -21,8 +21,8 @@ namespace AdaptedSlottedAloha
             InputFlow = inputFlow;
             NumberOfFrames = numberOfFrames;
             Adapted = adapted;
-            CreateObjects(NumberOfStations, InputFlow);
-            Calculate(NumberOfFrames);
+            CreateObjects(numberOfStations, inputFlow, numberOfFrames);
+            Calculate(numberOfFrames);
         }
 
         public void Calculate(int numberOfFrames)
@@ -35,7 +35,7 @@ namespace AdaptedSlottedAloha
                 IncreasePackagesLifeTime(NumberOfStations);
                 CheckCollision(NumberOfStations, InputFlow);
                 DecreaseBacklogTimers(NumberOfStations);
-                _statistics.IncreaseNumberOfBackloggedFramesAndPackages();
+                Statistics.IncreaseNumberOfBackloggedFramesAndPackages();
                 _server.IncreaseCurrentFrameCounter();
             }
         }
@@ -43,7 +43,7 @@ namespace AdaptedSlottedAloha
         public object GetStatistics()
         {
             Calculate(NumberOfFrames);
-            return _statistics;
+            return Statistics;
         }
 
         private void DecreaseBacklogTimers(int numberOfStations)
@@ -60,9 +60,9 @@ namespace AdaptedSlottedAloha
                     if (_server.IsPackageSent(i, _server.CurrentFrame))
                     {
                         _stations[i].DestroyPackage();
-                        _statistics.IncreasePackagesLifeTime(_stations[i].LifeTime);
+                        Statistics.IncreasePackagesLifeTime(_stations[i].LifeTime);
                         _stations[i].ResetLifeTime();
-                        _statistics.PackagesLeavedSystem++;
+                        Statistics.PackagesLeavedSystem++;
                     }
                 _server.CheckEstimationAfterSuccessfulOrEmpty(inputFlow);
             }
@@ -71,7 +71,7 @@ namespace AdaptedSlottedAloha
                 for (var i = 0; i < numberOfStations; i++)
                     if (_server.IsPackageSent(i, _server.CurrentFrame))
                         _stations[i].GenerateBacklogTime();
-                _statistics.Collisions++;
+                Statistics.Collisions++;
                 _server.CheckEstimationAfterConflict(inputFlow);
             }
         }
@@ -104,12 +104,12 @@ namespace AdaptedSlottedAloha
                     if (_stations[i].IsPackageExist())
                     {
                         _stations[i].ResetLifeTime();
-                        _statistics.PackagesGenerated++;
+                        Statistics.PackagesGenerated++;
                     }
                 }
         }
 
-        private void CreateObjects(int numberOfStations, double inputFlow)
+        private void CreateObjects(int numberOfStations, double inputFlow, int numberOfFrames)
         {
 
             for (var i = 0; i < numberOfStations; i++)
@@ -119,8 +119,8 @@ namespace AdaptedSlottedAloha
             }
             Station.Poisson = new Poisson(inputFlow / numberOfStations);
             Station.Random = new Random();
-            _server = new Server();
-            _statistics = new Statistics();
+            _server = new Server(numberOfStations, numberOfFrames);
+            Statistics = new Statistics();
         }
     }
 }

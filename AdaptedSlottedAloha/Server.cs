@@ -2,7 +2,12 @@ namespace AdaptedSlottedAloha
 {
     internal class Server
     {
-        public int[,] Frames { get; set; } = new int[1000, 500000];
+        public Server(int numberOfStations, int numberOfFrames)
+        {
+            Frames = new int[numberOfStations, numberOfFrames];
+        }
+
+        public int[,] Frames { get; set; }
         public int CurrentFrame { get; set; }
         public void IncreaseCurrentFrameCounter()
         {

@@ -6,12 +6,6 @@ namespace AdaptedSlottedAloha.Web.Controllers
     [Route("api/[controller]")]
     public class AlohaController : Controller
     {
-        //    [HttpGet("[action]")]
-        //    public string Data()
-        //    {
-        //        return "Hello, I'm Vera!";
-        //    }
-
         public class InputParameters
         {
             public int NumberOfStations { get; set; } //combobox1
@@ -34,7 +28,7 @@ namespace AdaptedSlottedAloha.Web.Controllers
             public int[] BackloggedPackages;
             public double[] AverageOfBackloggedPackages;
             public double[] AverageOfPackagesLifeTime;
-            //public Statistics[] statistics { get; set; } = new Statistics[5];
+            //public Statistics[] statistics { get; set; } = new Statistics[numberOfIterations];
 
             public Stats(int numberOfIterations)
             {
@@ -70,12 +64,12 @@ namespace AdaptedSlottedAloha.Web.Controllers
                     inputParameters.InputFlow,
                     inputParameters.NumberOfFrames, true);
 
-                adapted.PackagesGenerated[i] = adaptedAloha._statistics.PackagesGenerated;
-                adapted.PackagesLeavedSystem[i] = adaptedAloha._statistics.PackagesLeavedSystem;
-                adapted.Collisions[i] = adaptedAloha._statistics.Collisions;
-                adapted.BackloggedPackages[i] = adaptedAloha._statistics.BackloggedPackages;
-                adapted.AverageOfBackloggedPackages[i] = adaptedAloha._statistics.AverageOfBackloggedPackages;
-                adapted.AverageOfPackagesLifeTime[i] = adaptedAloha._statistics.AverageOfPackagesLifeTime;
+                adapted.PackagesGenerated[i] = adaptedAloha.Statistics.PackagesGenerated;
+                adapted.PackagesLeavedSystem[i] = adaptedAloha.Statistics.PackagesLeavedSystem;
+                adapted.Collisions[i] = adaptedAloha.Statistics.Collisions;
+                adapted.BackloggedPackages[i] = adaptedAloha.Statistics.BackloggedPackages;
+                adapted.AverageOfBackloggedPackages[i] = adaptedAloha.Statistics.AverageOfBackloggedPackages;
+                adapted.AverageOfPackagesLifeTime[i] = adaptedAloha.Statistics.AverageOfPackagesLifeTime;
 
 
                 var notAdaptedAloha = new AdaptedSlottedAloha.Engine(
@@ -83,12 +77,12 @@ namespace AdaptedSlottedAloha.Web.Controllers
                     inputParameters.InputFlow,
                     inputParameters.NumberOfFrames, false);
 
-                notadapted.PackagesGenerated[i] = notAdaptedAloha._statistics.PackagesGenerated;
-                notadapted.PackagesLeavedSystem[i] = notAdaptedAloha._statistics.PackagesLeavedSystem;
-                notadapted.Collisions[i] = notAdaptedAloha._statistics.Collisions;
-                notadapted.BackloggedPackages[i] = notAdaptedAloha._statistics.BackloggedPackages;
-                notadapted.AverageOfBackloggedPackages[i] = notAdaptedAloha._statistics.AverageOfBackloggedPackages;
-                notadapted.AverageOfPackagesLifeTime[i] = notAdaptedAloha._statistics.AverageOfPackagesLifeTime;
+                notadapted.PackagesGenerated[i] = notAdaptedAloha.Statistics.PackagesGenerated;
+                notadapted.PackagesLeavedSystem[i] = notAdaptedAloha.Statistics.PackagesLeavedSystem;
+                notadapted.Collisions[i] = notAdaptedAloha.Statistics.Collisions;
+                notadapted.BackloggedPackages[i] = notAdaptedAloha.Statistics.BackloggedPackages;
+                notadapted.AverageOfBackloggedPackages[i] = notAdaptedAloha.Statistics.AverageOfBackloggedPackages;
+                notadapted.AverageOfPackagesLifeTime[i] = notAdaptedAloha.Statistics.AverageOfPackagesLifeTime;
             }
 
             var adaptedAverage = new AverageStats
@@ -117,17 +111,5 @@ namespace AdaptedSlottedAloha.Web.Controllers
             };
             return outputResults;
         }
-
-
-        /*[HttpPost("[action]")]
-        public IActionResult CalculationOld([FromBody]InputParameters inputParameters)
-        {
-            var alohaEngine = new Aloha.Engine(inputParameters.NumberOfStations,
-                inputParameters.InputFlow,
-                inputParameters.NumberOfFrames);
-            var outputResults = alohaEngine.GetStatistics();
-            alohaEngine = null;
-            return Json(outputResults);
-        }*/
     }
 }

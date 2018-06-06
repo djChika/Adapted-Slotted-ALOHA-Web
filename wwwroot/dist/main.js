@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "42c7bec234ac8cf5b6f2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e7964f53395437d5e152"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -18384,7 +18384,7 @@ exports = module.exports = __webpack_require__(16)();
 
 
 // module
-exports.push([module.i, "\n#aloha {\n    background-color: rgb(253,253,253);\n}\n", "", {"version":3,"sources":["C:/Users/Chika/Documents/RiderProjects/Adapted-Slotted-ALOHA-Web/ClientApp/components/aloha-simulator.vue?087b816a"],"names":[],"mappings":";AAyCA;IACA,mCAAA;CACA","file":"aloha-simulator.vue","sourcesContent":["<template>\r\n    <div id=\"aloha\" class=\"m-auto border rounded\">\r\n        <div class=\"row justify-content-center\">\r\n            <InputData></InputData>\r\n            <OutputResults></OutputResults>\r\n        </div>\r\n        <div class=\"row justify-content-center\">\r\n            <MyBarChart name=\"Обработано пакетов\" :data=\"packagesLeavedSystem \"></MyBarChart>\r\n            <MyBarChart name=\"Коллизии\" :data=\"collisionData\"></MyBarChart>\r\n        </div>\r\n    </div>\r\n</template>\r\n<script>\r\n    import InputData from './AlohaSimulator/InputData'\r\n    import OutputResults from './AlohaSimulator/OutputResults'\r\n    import MyBarChart from './AlohaSimulator/Charts/MyBarChart'\r\n    export default {\r\n        components: {\r\n            InputData,\r\n            OutputResults,\r\n            MyBarChart\r\n        },\r\n        computed: {\r\n            packagesLeavedSystem() {\r\n                return {\r\n                    labels: ['Адаптивный', 'Неадаптивный'],\r\n                    dataset: [this.$store.getters.AdaptedPackagesLeavedSystem, this.$store.getters.NotAdaptedPackagesLeavedSystem],\r\n                    colors: ['rgba(210, 142, 202, 0.7)', 'rgba(101, 106, 187, 0.7)']\r\n                }\r\n            },\r\n            collisionData() {\r\n                return {\r\n                    labels: ['Адаптивный', 'Неадаптивный'],\r\n                    dataset: [this.$store.getters.AdaptedCollisions, this.$store.getters.NotAdaptedCollisions],\r\n                    colors: ['rgba(0, 154, 9, 0.7)', 'rgba(248, 121, 121, 0.7)']\r\n                }\r\n            }\r\n        },\r\n    }\r\n</script>\r\n<style>\r\n    #aloha {\r\n        background-color: rgb(253,253,253);\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n#aloha {\n    background-color: rgb(253,253,253);\n}\n", "", {"version":3,"sources":["C:/Users/Chika/Documents/RiderProjects/Adapted-Slotted-ALOHA-Web/ClientApp/components/aloha-simulator.vue?82679bfc"],"names":[],"mappings":";AAyCA;IACA,mCAAA;CACA","file":"aloha-simulator.vue","sourcesContent":["<template>\r\n    <div id=\"aloha\" class=\"m-auto border rounded-bottom\">\r\n        <div class=\"row justify-content-center\">\r\n            <InputData></InputData>\r\n            <OutputResults></OutputResults>\r\n        </div>\r\n        <div class=\"row justify-content-center\">\r\n            <MyBarChart name=\"Обработано пакетов\" :data=\"packagesLeavedSystem \"></MyBarChart>\r\n            <MyBarChart name=\"Коллизии\" :data=\"collisionData\"></MyBarChart>\r\n        </div>\r\n    </div>\r\n</template>\r\n<script>\r\n    import InputData from './AlohaSimulator/InputData'\r\n    import OutputResults from './AlohaSimulator/OutputResults'\r\n    import MyBarChart from './AlohaSimulator/Charts/MyBarChart'\r\n    export default {\r\n        components: {\r\n            InputData,\r\n            OutputResults,\r\n            MyBarChart\r\n        },\r\n        computed: {\r\n            packagesLeavedSystem() {\r\n                return {\r\n                    labels: ['Адаптивный', 'Неадаптивный'],\r\n                    dataset: [this.$store.getters.AdaptedPackagesLeavedSystem, this.$store.getters.NotAdaptedPackagesLeavedSystem],\r\n                    colors: ['rgba(210, 142, 202, 0.7)', 'rgba(101, 106, 187, 0.7)']\r\n                }\r\n            },\r\n            collisionData() {\r\n                return {\r\n                    labels: ['Адаптивный', 'Неадаптивный'],\r\n                    dataset: [this.$store.getters.AdaptedCollisions, this.$store.getters.NotAdaptedCollisions],\r\n                    colors: ['rgba(0, 154, 9, 0.7)', 'rgba(248, 121, 121, 0.7)']\r\n                }\r\n            }\r\n        },\r\n    }\r\n</script>\r\n<style>\r\n    #aloha {\r\n        background-color: rgb(253,253,253);\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -33236,41 +33236,20 @@ var getters = {
 };
 
 var mutations = {
-    AdaptedGeneratedPackages: function AdaptedGeneratedPackages(state, value) {
-        state.adapted.generatedPackages = value;
-    },
-    AdaptedPackagesLeavedSystem: function AdaptedPackagesLeavedSystem(state, value) {
-        state.adapted.packagesLeavedSystem = value;
-    },
-    AdaptedBackloggedPackages: function AdaptedBackloggedPackages(state, value) {
-        state.adapted.backloggedPackages = value;
-    },
-    AdaptedCollisions: function AdaptedCollisions(state, value) {
-        state.adapted.collisions = value;
-    },
-    AdaptedAverageOfBackloggedPackages: function AdaptedAverageOfBackloggedPackages(state, value) {
-        state.adapted.averageOfBackloggedPackages = value;
-    },
-    AdaptedAverageOfPackagesLifeTime: function AdaptedAverageOfPackagesLifeTime(state, value) {
-        state.adapted.averageOfPackagesLifeTime = value;
-    },
-    NotAdaptedGeneratedPackages: function NotAdaptedGeneratedPackages(state, value) {
-        state.notAdapted.generatedPackages = value;
-    },
-    NotAdaptedPackagesLeavedSystem: function NotAdaptedPackagesLeavedSystem(state, value) {
-        state.notAdapted.packagesLeavedSystem = value;
-    },
-    NotAdaptedBackloggedPackages: function NotAdaptedBackloggedPackages(state, value) {
-        state.notAdapted.backloggedPackages = value;
-    },
-    NotAdaptedCollisions: function NotAdaptedCollisions(state, value) {
-        state.notAdapted.collisions = value;
-    },
-    NotAdaptedAverageOfBackloggedPackages: function NotAdaptedAverageOfBackloggedPackages(state, value) {
-        state.notAdapted.averageOfBackloggedPackages = value;
-    },
-    NotAdaptedAverageOfPackagesLifeTime: function NotAdaptedAverageOfPackagesLifeTime(state, value) {
-        state.notAdapted.averageOfPackagesLifeTime = value;
+    updateResults: function updateResults(state, data) {
+        state.adapted.generatedPackages = data.adapted.packagesGenerated.toFixed(0);
+        state.adapted.packagesLeavedSystem = data.adapted.packagesLeavedSystem.toFixed(0);
+        state.adapted.backloggedPackages = data.adapted.backloggedPackages.toFixed(0);
+        state.adapted.collisions = data.adapted.collisions.toFixed(0);
+        state.adapted.averageOfBackloggedPackages = data.adapted.averageOfBackloggedPackages.toFixed(0);
+        state.adapted.averageOfPackagesLifeTime = data.adapted.averageOfPackagesLifeTime.toFixed(2);
+
+        state.notAdapted.generatedPackages = data.notAdapted.packagesGenerated.toFixed(0);
+        state.notAdapted.packagesLeavedSystem = data.notAdapted.packagesLeavedSystem.toFixed(0);
+        state.notAdapted.backloggedPackages = data.notAdapted.backloggedPackages.toFixed(0);
+        state.notAdapted.collisions = data.notAdapted.collisions.toFixed(0);
+        state.notAdapted.averageOfBackloggedPackages = data.notAdapted.averageOfBackloggedPackages.toFixed(0);
+        state.notAdapted.averageOfPackagesLifeTime = data.notAdapted.averageOfPackagesLifeTime.toFixed(2);
     }
 };
 
@@ -33282,19 +33261,7 @@ var actions = {
             data: payload
         }).then(function (response) {
             var data = response.data;
-            state.adapted.generatedPackages = data.adapted.packagesGenerated.toFixed(0);
-            state.adapted.packagesLeavedSystem = data.adapted.packagesLeavedSystem.toFixed(0);
-            state.adapted.backloggedPackages = data.adapted.backloggedPackages.toFixed(0);
-            state.adapted.collisions = data.adapted.collisions.toFixed(0);
-            state.adapted.averageOfBackloggedPackages = data.adapted.averageOfBackloggedPackages.toFixed(0);
-            state.adapted.averageOfPackagesLifeTime = data.adapted.averageOfPackagesLifeTime.toFixed(2);
-
-            state.notAdapted.generatedPackages = data.notAdapted.packagesGenerated.toFixed(0);
-            state.notAdapted.packagesLeavedSystem = data.notAdapted.packagesLeavedSystem.toFixed(0);
-            state.notAdapted.backloggedPackages = data.notAdapted.backloggedPackages.toFixed(0);
-            state.notAdapted.collisions = data.notAdapted.collisions.toFixed(0);
-            state.notAdapted.averageOfBackloggedPackages = data.notAdapted.averageOfBackloggedPackages.toFixed(0);
-            state.notAdapted.averageOfPackagesLifeTime = data.notAdapted.averageOfPackagesLifeTime.toFixed(2);
+            context.commit('updateResults', data);
         });
     }
 };
@@ -49225,7 +49192,7 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "m-auto border rounded",
+    staticClass: "m-auto border rounded-bottom",
     attrs: {
       "id": "aloha"
     }

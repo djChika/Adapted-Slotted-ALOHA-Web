@@ -1,5 +1,5 @@
 <template>
-    <div id="aloha" class="m-auto border rounded">
+    <div id="aloha" class="m-auto border rounded-bottom">
         <div class="row justify-content-center">
             <InputData></InputData>
             <OutputResults></OutputResults>
